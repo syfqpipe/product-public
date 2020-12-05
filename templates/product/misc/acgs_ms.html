@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 4.01cm 2.48cm 3.34cm 2.48cm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: Arial, sans-serif;
+            }
+            .default-template p#secondary {
+                word-spacing: 7pt;
+                font-size: 21px;
+                text-align: justify;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 22px;
+                text-align: justify;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 15rem;
+            }
+            .pg-start {
+                margin-top: 15rem;
+            }
+            ol#aol {
+                list-style-type: lower-latin;
+            }
+            ol#bol {
+                list-style-type: decimal;
+            }
+            ol li {
+                word-spacing: 7pt;
+                font-size: 20px;
+                text-align: justify;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container pg-start">
+            <h1 class="font-weight-bold text-center mb-0">
+                PERAKUAN KEUTUHAN
+            </h1>
+            <h1 class="font-weight-bold text-center mt-0">
+                SYARIKAT
+            </h1>
+
+            <h2 class="font-weight-bold mt-0 text-center">
+                (Attestation of Company Good Standing)
+            </h2>
+
+            <h2 class="font-weight-bold mb-1 text-center">
+                {{data.compName}}
+            </h2>
+
+            <h2 class="font-weight-bold mb-7 text-center">
+                {{data.compNoNew}} ({{data.compNoOld}})
+            </h2>
+
+            <p id="primary" class="mt-7">
+                Perakuan ini adalah untuk mengesahkan bahawa syarikat di 
+                atas telah diperbadankan pada {{data.incorpDate}} sebagai sebuah 
+                syarikat persendirian. Syarikat ini telah mematuhi kriteria 
+                serahsimpan berkanun yang ditetapkan oleh Akta Syarikat 2016.
+            </p>
+
+            <p id="primary">
+                Berdasarkan dokumen yang diserahsimpan dengan Suruhanjaya Syarikat Malaysia:
+            </p>
+
+            <ol id="aol">
+                <li>
+                    Syarikat ini tidak dalam proses penggulungan atau pembubaran;
+                </li>
+
+                <li>
+                    Syarikat telah menyerahsimpan penyata tahunan dan penyata kewangan 
+                    atau sijil pengecualian syarikat (EPC) yang terkini;
+                </li>
+                <li>
+                    Alamat berdaftar syarikat adalah di {{data.regAddress_address1}},
+                    {{data.regAddress_address2}}, {{data.regAddress_address3}}, {{data.regAddress_postcode}}.
+                </li>
+            </ol>
+            <p id="primary" class="mt-0">
+                Butir-butir di atas adalah ekstrak daripada dokumen yang telah didaftarkan.
+            </p>
+
+            <h1 class="font-weight-bold text-center pg-break mb-0">
+                KRITERIA BAGI PENGELUARAN
+            </h1>
+            <h1 class="font-weight-bold text-center mt-0 mb-7">
+                PERAKUAN KEUTUHAN SYARIKAT
+            </h1>
+
+            <p id="primary" class="mt-7">
+                yang mengesahkan kewujudan sesebuah syarikat yang 
+                telah memenuhi kriteria yang ditetapkan dalam ACGS.
+            </p>
+
+            <h3 class="font-weight-bold">
+                Keterangan Produk
+            </h3>
+            <p id="primary">
+                ACGS mengandungi maklumat nama syarikat, nombor pendaftaran, 
+                tarikh pemerbadanan, jenis syarikat sama ada syarikat persendirian 
+                atau syarikat awam dan alamat berdaftar syarikat. Sebagai tambahan, 
+                pengguna boleh mengimbas Kod QR dari cetakan fizikal ACGS dan dapat 
+                melihat maklumat sebenar ACGS serta dapat membuat perbandingan bagi 
+                mengesahkan maklumat dan memastikan bahawa tiada perubahan dibuat 
+                kepada cetakan.
+            </p>
+            
+            <h3 class="font-weight-bold">
+                ACGS Product Criteria
+            </h3>
+
+            <p id="primary" clas="mb-0">
+                Syarikat mesti memenuhi kriteria seperti berikut:
+            </p>
+            <ol id="bol">
+                <li>
+                    Syarikat telah ditubuhkan kurang-kurangnya 18 bulan daripada
+                    tarikh permohonan ACGS;
+                </li>
+                <li>
+                    Syarikat telah menyerahsimpan penyata tahunan dan penyata
+                    kewangan yang telah di audit atau sijil pengecualian syarikat (EPC)
+                    yang terkini;
+                </li>
+                <li>
+                    Syarikat berstatus 'existing' dan bukan dalam proses penggulungan
+                    atau pembatalan nama syarikat atau pembubaran;
+                </li>
+                <li>
+                    Syarikat bukan berstatus dormant;
+                </li>
+                <li>
+                    Syarikat mempunyai alamat berdaftar;
+                </li>
+                <li>
+                    Syarikat atau pengarah-pengarah syarikat tidak mempunyai kompaun
+                    tertunggak dengan SSM; dan
+                </li>
+                <li>
+                    Syarikat atau pengarah-pengarah syarikat tidak mempunyai sebarang
+                    kes pendakwaan tertunggak dengan SSM.
+                </li>
+            </ol>
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

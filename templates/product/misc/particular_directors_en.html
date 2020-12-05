@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 27mm 10mm 27mm 10mm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container" style="margin-top: 15rem;">
+            <p>Although all efforts has been carried out to ensure that the information provided is 
+                accurate and up to date, the Registrat of Companies will not be liable for any losses 
+                arising from any inaccurate or omitted information.</p>
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** PARTICULAR OF DIRECTORS/OFFICERS **</h3>
+
+                <div class="table-responsive">
+                    <table class="table text-left borderless">
+
+                        <tr></tr>
+                            <td>CORPORATE INFORMATION</td>
+        
+                        <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyName']</td>                            
+                            </tr>
+                            <tr>
+                                <td>Last Old Name:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyOldName']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Date Of Change:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['dateOfChange']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Registration No.:</td>
+                                <td>XXXNewCoFormatXXX  ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyNo']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Incorporation Date:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['incorpDate']</td>                            
+                            </tr>       
+                            <tr>       
+                                <td>Type:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyType']</td>                            
+                            </tr>     
+                            <tr>       
+                                <td>Status:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyStatus']</td>                            
+                            </tr>  
+                            <tr>       
+                                <td>Registered Address:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocRegAddressInfo']['address1']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocRegAddressInfo']['address2']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocRegAddressInfo']['address3']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocRegAddressInfo']['town']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocRegAddressInfo']['state']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Postcode:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocRegAddressInfo']['postcode']</td>                            
+                            </tr> 
+                                <td>Origin:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyCountry']</td>                            
+                            </tr> 
+                                <td>Business Address:</td>
+                                <td>>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocBusinessAddressInfo']['address1']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocBusinessAddressInfo']['address2']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocBusinessAddressInfo']['address3']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocBusinessAddressInfo']['town']
+                                    ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocBusinessAddressInfo']['state']</td>
+
+                             <tr>       
+                                 <td>Postcode:</td>
+                                 <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocBusinessAddressInfo']['postcode']</td>
+                                                              
+                            </tr> 
+                            <tr>       
+                                <td>Nature Of Business:</td>
+                                <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['businessDescription']</td>                            
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            
+
+
+
+        <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">
+                               
+            </h3>
+                <div class="table-responsive">
+                <p>Name: ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyName']</p>
+                <p>Registration No.: XXXNewCoFormatXXX  ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyNo']</p>
+                
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                     
+                        <tr>
+                            <td>CURRENT DIRECTORS/OFFICERS</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Name/Address</td>
+                            <td>IC/Passport</td>
+                            <td>Designation</td>
+                            <td>Date Of Appointment</td>
+                        </tr>
+                        <tr>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['name']</td>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['idNo']</td>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['designationCode']</td>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['appointmentDate']</td>
+                        </tr>
+
+                
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">
+                               
+            </h3>
+                <div class="table-responsive">
+                <p>Name: ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyName']</p>
+                <p>Registration No.: XXXNewCoFormatXXX  ['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyInfo']['companyNo']</p>
+
+                <p>*The information of previous directors/officers is extracted from the company's document registered for the last 15 years.</p>
+                
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                     
+                        <tr>
+                            <td>PREVIOUS DIRECTORS/OFFICERS</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Name/Address</td>
+                            <td>IC/Passport</td>
+                            <td>Designation</td>
+                            <td>Date Of Appointment</td>
+                            <td>Date Of Resignation</td>
+                            <td>Date of Removal</td>
+                        </tr>
+                        <tr>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['name']</td>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['idNo']</td>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['designationCode']</td>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['appointmentDate']</td>
+                            <td>['Body']['getRocBusinessOfficersResponse']['response']['getRocBusinessOfficersReturn']['rocCompanyOfficerInfos']['resignDate']</td>
+                            <td></td>
+
+                        </tr>
+
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

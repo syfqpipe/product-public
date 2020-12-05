@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 27mm 10mm 27mm 10mm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container" style="margin-top: 15rem;">
+            <p>COMPANIES ACT 2016</p>
+            <p>(SECTION 17)</p>
+            <p>(ACT 777)</p>
+            <p>CERTIFICATE OF INCORPORATION OF PUBLIC COMPANY</p>
+            <p>This is to certify that </p>
+            <p>['Body']['getCertIncorpResponse']['response']['getCertIncorpReturn']['companyName']  XXXNewCoFormatXXX   ['Body']['getCertIncorpResponse']['response']['getCertIncorpReturn']['companyNo']</p>
+            <p>is, on and from the ['Body']['getCertIncorpResponse']['response']['getCertIncorpReturn']['incorpDate'], incorporated under the Companies Act 2016, and that the company is a ['Body']['getCertIncorpResponse']['response']['getCertIncorpReturn']['companyType'] and that the company is a ['Body']['getCertIncorpResponse']['response']['getCertIncorpReturn']['companyStatus']</p>
+            <p>Dated at ['Body']['getCertIncorpResponse']['response']['getCertIncorpReturn']['branchCode'] this ['Body']['getCertIncorpResponse']['response']['getCertIncorpReturn']['incorpDate']</p>
+
+
+
+<!--
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** SUMMARY OF SHARE CAPITAL **</h3>
+            <p>Name: {{items.rocCompanyInfo.companyName}}</p>
+            <p>Registration No.: 201101032401 (960536-K)</p>
+            <p>Total Issued: RM {{items.rocShareCapitalInfo.totalIssued}}</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="text-right">CASH</th>
+                            <th class="text-right">OTHERWISE THAN CASH</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <td>ORDINARY</td>
+                            <td class="text-right">
+                                0
+                            </td>
+                            <td class="text-right">0</td>
+                        </tr>
+                        <tr>
+                            <td>PREFERENCE</td>
+                            <td class="text-right">0</td>
+                            <td class="text-right">0</td>
+                        </tr>
+                        <tr>
+                            <td>OTHERS</td>
+                            <td class="text-right">0</td>
+                            <td class="text-right">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        -->
+
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 27mm 10mm 27mm 10mm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container" style="margin-top: 15rem;">
+            <p>
+                ALTHOUGH ALL EFFORTS HAVE BEEN CARRIED OUT TO ENSURE 
+                THAT THE INFORMATION PROVIDED IS ACCURATE AND UP TO DATE, 
+                THE REGISTRAR OF COMPANIES WILL NOT BE LIABLE FOR ANY LOSSES 
+                ARISING FROM ANY INACCURATE OR OMITTED INFORMATION.
+            </p>
+            <h3 class="font-weight-bold text-center">** ACGS **</h3>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr>
+                        <td>Name</td>
+                        <td>: RAFFCOMM TECHNOLOGIES SDN. BHD. 201001015771 (1000449-W)</td>
+                    </tr>
+                    <tr>
+                        <td>Last Old Name</td>
+                        <td>: {{items.rocCompanyInfo.companyOldName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Change</td>
+                        <td>: {{items.rocCompanyInfo.dateOfChange}}</td>
+                    </tr>
+                    <tr>
+                        <td>Registration No.</td>
+                        <td>: <strong>201101032401 (960536-K)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Incorporation Date</td>
+                        <td>: {{items.rocCompanyInfo.incorpDate}}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>
+                            {% if 'B' in items.rocCompanyInfo.companyType %}
+                                <p>: Limited by Share and Guarantee</p>
+                            {% endif %}
+                            {% if 'G' in items.rocCompanyInfo.companyType %}
+                                <p>: Limited by Guarantee</p>
+                            {% endif %}
+                            {% if 'S' in items.rocCompanyInfo.companyType %}
+                                <p>: Limited by Shares</p>
+                            {% endif %}
+                            {% if 'U' in items.rocCompanyInfo.companyType %}
+                                <p>: Unlimited</p>
+                            {% endif %}
+                            {% if 'R' in items.rocCompanyInfo.companyStatus %}
+                                <p>: Private Limited</p>
+                            {% endif %}
+                            {% if 'U' in items.rocCompanyInfo.companyStatus %}
+                                <p>: Public Limited</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>
+                            {% if 'B' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Dissolved Conversion to LLP</p>
+                            {% endif %}
+                            {% if 'C' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Ceased Business</p>
+                            {% endif %}
+                            {% if 'D' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Dissolved</p>
+                            {% endif %}
+                            {% if 'E' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Existing</p>
+                            {% endif %}
+                            {% if 'R' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Removed</p>
+                            {% endif %}
+                            {% if 'W' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Winding Up</p>
+                            {% endif %}
+                            {% if 'X' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Null and Void by Court Order</p>
+                            {% endif %}
+                            {% if 'Y' in items.rocCompanyInfo.statusOfCompany %}
+                                <p>: Struck-off & Winding-up via Court Order</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Registered Address</td>
+                        <td>
+                            <p class="mb-0">: {{items.rocRegAddressInfo.address1}}</p>
+                            {% if items.rocRegAddressInfo.address2 %}
+                                <p class="my-0">  {{items.rocRegAddressInfo.address2}}</p>
+                            {% endif %}
+                            {% if items.rocRegAddressInfo.address3 %}
+                                <p class="my-0">  {{items.rocRegAddressInfo.address3}}</p>
+                            {% endif %}
+                            <p class="my-0"> </p>
+                            <p class="my-0">  {{items.rocRegAddressInfo.town}}</p>
+                            {% if 'J' in items.rocRegAddressInfo.state %}
+                                <p class="mt-0"> Johor</p> 
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Postcode</td>
+                        <td>: {{items.rocRegAddressInfo.postcode}}</td>
+                    </tr>
+                    <tr>
+                        <td>Origin</td>
+                        <td>
+                            {% if 'MAL' in items.rocCompanyInfo.companyCountry %}
+                                <p class="mt-0">: Malaysia</p> 
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Business Address</td>
+                        <td>
+                            <p class="mb-0">:  {{items.rocBusinessAddressInfo.address1}} </p>
+                            <p class="my-0">  {{items.rocBusinessAddressInfo.address2}}</p>
+                            {% if items.rocBusinessAddressInfo.address3 %}
+                                <p class="my-0">  {{items.rocBusinessAddressInfo.address3}}</p>
+                            {% endif %}
+                            <p class="my-0">  {{items.rocBusinessAddressInfo.town}} </p>
+                            {% if 'J' in items.rocBusinessAddressInfo.state %}
+                                <p class="mt-0"> Johor</p> 
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Postcode</td>
+                        <td>: {{items.rocBusinessAddressInfo.postcode}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nature Of Business</td>
+                        <td>: 
+                            {% if items.rocCompanyInfo.businessDescription %}
+                                {{items.rocCompanyInfo.businessDescription}}
+                            {% else %}
+                                NIL
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** SUMMARY OF SHARE CAPITAL **</h3>
+            <p>Name: {{items.rocCompanyInfo.companyName}}</p>
+            <p>Registration No.: 201101032401 (960536-K)</p>
+            <p>Total Issued: RM {{items.rocShareCapitalInfo.totalIssued}}</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="text-right">CASH</th>
+                            <th class="text-right">OTHERWISE THAN CASH</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <td>ORDINARY</td>
+                            <td class="text-right">
+                                0
+                            </td>
+                            <td class="text-right">0</td>
+                        </tr>
+                        <tr>
+                            <td>PREFERENCE</td>
+                            <td class="text-right">0</td>
+                            <td class="text-right">0</td>
+                        </tr>
+                        <tr>
+                            <td>OTHERS</td>
+                            <td class="text-right">0</td>
+                            <td class="text-right">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** DIRECTORS / OFFICERS **</h3>
+            <p>Name: {{items.rocCompanyInfo.companyName}}</p>
+            <p>Registration No.: 201101032401 (960536-K)</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <thead>
+                        <tr>
+                            <th>Name/Address</th>
+                            <th>Designation</th>
+                            <th>Date Of Appointment</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        {% for item in items.rocCompanyOfficerListInfo.rocCompanyOfficerInfos.rocCompanyOfficerInfos %}
+                        <tr>
+                            <td>
+                                <p class="mb-0">{{item.name}}</p>
+                                <p class="my-0">{{item.address1}}</p>
+                                <p class="my-0">{{item.address2}}</p>
+                                {% if item.address3 %}
+                                    <p class="my-0">{{item.address3}}</p>
+                                {% endif %}
+                                <p class="my-0">{{item.postcode}}</p>
+                                {% if 'J' in item.state %}
+                                    <p class="mt-0"> Johor</p> 
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if 'D' in item.designationCode %}
+                                    <p class="mt-0">Director</p> 
+                                {% endif %}
+                                {% if 'S' in item.designationCode %}
+                                    <p class="mt-0">Secretary</p> 
+                                {% endif %}
+                            </td>
+                            <td>{{item.startDate}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** SHAREHOLDERS / MEMBERS **</h3>
+            <p>Name: {{items.rocCompanyInfo.companyName}}</p>
+            <p>Registration No.: 201101032401 (960536-K)</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <thead>
+                        <tr>
+                            <th>IC/Passport/
+                                Registration No.</th>
+                            <th>Name/Company Name</th>
+                            <th>Total Of Share</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        {% for item in items.rocShareholderListInfo.rocShareholderInfos.rocShareholderInfos %}
+                        <tr>
+                            <td>
+                                {{item.idNo}}
+                            </td>
+                            <td>{{item.name}}</td>
+                            <td>RM {{item.share}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** COMPANY CHARGES **</h3>
+            <p>Name: {{items.rocCompanyInfo.companyName}}</p>
+            <p>Registration No.: 201101032401 (960536-K)</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tbody>
+                        {% for item in items.rocChargesListInfo.rocChargesInfos.rocChargesInfos %}
+                        <tr>
+                            <td>
+                                {{forloop.counter}}.
+                            </td>
+                            <td>
+                                <p class="mb-0">Charge Number</p>
+                                <p class="my-0">Total of Charge</p>
+                                <p class="my-0">Date of Creation</p>
+                                <p class="my-0">Name of Chargee</p>
+                                <p class="mt-0">Charge Status</p>
+                            </td>
+                            <td>
+                                <p class="mb-0">: {{item.chargeNo}}</p>
+                                <p class="my-0">: {{item.chargeAmount}}</p>
+                                <p class="my-0">: {{item.chargeCreateDate}}</p>
+                                <p class="my-0">: {{item.chargeeName}}
+                                    {% if item.chargeeName %}
+                                        <p class="my-0">: {{item.chargeeName}}</p>
+                                    {% else %}
+                                        <p class="my-0">: NIL</p>
+                                    {% endif %}
+                                </p>
+                                <p class="mt-0">: {{item.chargeStatus}}</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** SUMMARY OF FINANCIAL INFORMATION **</h3>
+            <p>Name: {{items.rocCompanyInfo.companyName}}</p>
+            <p>Registration No.:</p>
+            <div class="table-responsive">
+                <table class="table borderless">
+                    <tr>
+                        <td>Auditor</td>
+                        <td>
+                            ERNST & YOUNG (AF0039)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Auditor Address</td>
+                        <td>
+                            <p>11.2A, TKT.11</p>
+                            <p>MENARA PELANGO, 2 JLN. KUNING, J.BAHRU</p>
+                            <p>Johor</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Exempt Private Company</td>
+                        <td>: N/A</td>
+                    </tr>
+                    <tr>
+                         <td>Financial Year End</td>
+                        <td>
+                             31-12-2017
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Unqualified Reports (Y/N)</td>
+                        <td>
+                            Y
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Consolidated Accounts (Y/N)</td>
+                        <td>
+                            N
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data of Tabling</td>
+                        <td>
+                            27-06-18
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Balance Sheet</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Non-current Assets</td>
+                        <td class="text-right">
+                            11710314.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Current Assets</td>
+                        <td class="text-right">
+                            483932.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Non-current Liabilities</td>
+                        <td class="text-right"> 
+                            78366.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Current Liabilities</td>
+                        <td class="text-right"> 
+                            40123241.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Share Capital</td>
+                        <td class="text-right">
+                            9331000.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reserve</td>
+                        <td class="text-right">
+                            0.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Retain Interest</td>
+                        <td class="text-right">
+                            -37338361.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Minority Interest</td>
+                        <td class="text-right">
+                            0.00
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>Income Statement Items</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Revenue</td>
+                        <td class="text-right">
+                            781304.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Profit / (Loss) Before Tax</td>
+                        <td class="text-right">
+                            -1757647.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Profit / (Loss) After Tax</td>
+                        <td class="text-right">
+                            -1757647.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Net Dividend</td>
+                        <td class="text-right">
+                            0.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Minority Interest</td>
+                        <td class="text-right">
+                            0.00
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

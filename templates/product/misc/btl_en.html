@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 4.01cm 2.48cm 3.34cm 2.48cm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template p#secondary {
+                font-size: 18px;
+            }
+            .default-template p#disclaimer {
+                font-size: 16px;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 22px;
+                text-align: justify;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 15rem;
+            }
+            .pg-start {
+                margin-top: 15rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+        <div class="default-template container pg-start">
+            <div class="row">
+                <div class="col-2">
+                    <p id="disclaimer">
+                        NOTE:
+                    </p>
+                </div>
+                
+                <div class="col-10">
+                    <p id="disclaimer">
+                        ALTHOUGH ALL EFFORTS HAVE BEEN CARRIED OUT TO 
+                        ENSURE THAT THE INFORMATION PROVIDED IS ACCURATE 
+                        AND UP TO DATE, THE REGISTRAR OF BUSINESSES WILL 
+                        NOT BE LIABLE FOR ANY LOSSES ARISING FROM ANY 
+                        INACCURATE OR OMITTED INFORMATION.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-weight-bold text-center">CERTIFICATION ON EXPIRY OF A BUSINESS REGISTRATION</h3>
+            <p id="secondary">NAME: </p>
+            <p id="secondary">REGISTRATION NO.: </p>
+
+            <p id="secondary">
+                Based on record kept at the Companies Commission of Malaysia, 
+                until this day {{data.currentDate}}, it is hereby certified 
+                that the above business registration has expired on {{data.endDate}}.
+                <br />
+            </p>
+
+            <p id="secondary">
+                Application for the renewal of a business shall be made at any 
+                time before the expiry date up to twelve (12) months after 
+                the expiry date or the previous renewal.
+            </p>
+            
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

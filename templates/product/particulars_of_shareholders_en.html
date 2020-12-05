@@ -1,0 +1,672 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                /* margin: 4.01cm 2.48cm 3.34cm 2.48cm; */
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                    font-size: 10pt;
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 12rem !important;
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 14pt;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 12pt;
+                padding-left: 2.5rem !important;
+                padding-right: 2.5rem !important;
+            }
+            .default-template p#secondary {
+                font-size: 12pt;
+                margin-bottom: 6pt;
+            }
+            .default-template p#disclaimer {
+                font-size: 10pt;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 12pt;
+                text-align: justify;
+            }
+            table {
+                border: 0;
+                break-inside:auto !important;
+            } 
+            table tr {
+                break-inside: auto !important; 
+                break-after: auto !important;
+            }
+            table td {
+                break-inside: auto !important; 
+                break-after: auto !important;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            .table td, .table th {
+                border-top: 0px;
+                padding-right: 0;
+                padding-left: 0;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+            table tr#zero {
+                padding-top: 0; 
+                padding-bottom: 0; 
+                margin-top: 0; 
+                margin-bottom: 0;
+            }
+            table tr th#head-zero {
+                padding-top: 0; 
+                padding-bottom: 0; 
+                margin-top: 0; 
+                margin-bottom: 0;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 12rem;
+            }
+            ol#branch-list {
+                font-size: 12pt;
+            }
+            ol > li {
+                margin-bottom: 0;
+                margin-top: 0;
+                font-size: 12pt;
+            }
+            .pg-start {
+                margin-top: 12rem;
+            }
+            .end-report {
+                position: absolute;
+                bottom: 6.0rem;
+                left: 0;
+                height: 10rem;
+                width: 100%;
+                padding-right: 30px;
+            }
+            h4 {
+                font-size: 14pt;
+            }
+            hr {
+                box-sizing: content-box;
+                height: 0;
+                overflow: visible;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                border: 0;
+                border-top-color: currentcolor;
+                border-top-style: none;
+                border-top-width: 0px;
+                border-top: 1px solid rgba(0,0,0,.1);
+            }
+            h4#end{
+                margin-top: 100px; 
+                font-size: 14pt;
+            }
+            footer#footer {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 10pt;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+
+                height: 2.5rem;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+        <div class="default-template container pg-start">
+            <p id="disclaimer">
+                <b>
+                    ALTHOUGH ALL EFFORTS HAVE BEEN CARRIED OUT TO ENSURE 
+                    THAT THE INFORMATION PROVIDED IS ACCURATE AND UP TO 
+                    DATE, THE REGISTRAR OF COMPANIES WILL NOT BE LIABLE 
+                    FOR ANY LOSSES ARISING FROM ANY INACCURATE OR OMITTED 
+                    INFORMATION.
+                </b>
+            </p>
+
+            <h4 class="font-weight-bold text-center">PARTICULARS OF SHAREHOLDERS</h4>
+            <h4 class="font-weight-bold text-center"><u>CORPORATE INFORMATION</u></h4>
+
+            <div class="table-responsive">
+                <table class="table text-left" >
+                    <tr>
+                        <th style="width:30%; border: 0;"></th>
+                        <th style="width:1%; border: 0;"></th>
+                        <th style="width:69%; border: 0;"></th>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">NAME</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">{{ data.company_info.name }}</p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">LAST OLD NAME</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.old_name  %}
+                            {{data.company_info.old_name }}
+                            {% else %}
+                            NIL
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">DATE OF CHANGE</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.date_of_change %}
+                                {{ data.company_info.date_of_change }}
+                            {% else %}
+                                NIL    
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">REGISTRATION NO.</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.registration_no %}
+                                <b>{{ data.company_info.registration_no }}</b>
+                            {% else %}
+                                NIL    
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">INCORPORATION DATE</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.incorp_date %}
+                                {{ data.company_info.incorp_date }}
+                            {% else %}
+                                NIL    
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">TYPE</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.company_type %}
+                                {{ data.company_info.company_type }} <br/>
+                            {% endif %}
+                            {% if data.company_info.company_status %}
+                                {{ data.company_info.company_status }}
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">STATUS</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.status_of_company %}
+                                {{ data.company_info.status_of_company }}
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">REGISTERED ADDRESS</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                                {% if data.company_info.address1 %}
+                                    {{data.company_info.address1}} <br />
+                                {% else %}
+                                    NIL
+                                {% endif %}
+                                {% if data.company_info.address2 %}
+                                    {{data.company_info.address2}} <br />
+                                {% endif %}
+                                {% if data.company_info.address3 %}
+                                    {{data.company_info.address3}} <br />
+                                {% endif %}
+                                {% if data.company_info.town %}
+                                    {{data.company_info.town}} <br/>
+                                {% endif %}
+                                {% if data.company_info.state %}
+                                    {{data.company_info.state }}
+                                {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">POSTCODE</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.postcode %}
+                                {{ data.company_info.postcode }}
+                            {% else %}
+                                NIL
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">ORIGIN</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.company_info.origin %}
+                                {{ data.company_info.origin }}
+                            {% else %}
+                                NIL
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BUSINESS ADDRESS</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                                {% if data.business_info.address1 %}
+                                    {{data.business_info.address1}} <br />
+                                {% else %}
+                                    NIL
+                                {% endif %}
+                                {% if data.business_info.address2 %}
+                                    {{data.business_info.address2}} <br />
+                                {% endif %}
+                                {% if data.business_info.address3 %}
+                                    {{data.business_info.address3}} <br />
+                                {% endif %}
+                                {% if data.business_info.town %}
+                                    {{data.business_info.town}} <br/>
+                                {% endif %}
+                                {% if data.business_info.state %}
+                                    {{data.business_info.state }}
+                                {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">POSTCODE</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.business_info.postcode %}
+                                {{data.business_info.postcode}}
+                            {% else %}
+                                NIL
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">NATURE OF BUSINESS</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">
+                            {% if data.business_info.description %}
+                                {{data.business_info.description}}
+                            {% else %}
+                                NIL
+                            {% endif %}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <h4 class="font-weight-bold text-center pg-break"><u>CURRENT SHAREHOLDERS </u></h4>
+
+            <div class="table-responsive">
+                <table class="table text-left" >
+                    <tr>
+                        <th style="width:30%; border: 0;"></th>
+                        <th style="width:1%; border: 0;"></th>
+                        <th style="width:69%; border: 0;"></th>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">NAME</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">{{ data.company_info.name }}</p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">REGISTRATION NO.</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2"><b>{{data.company_info.registration_no}}</b></p></td>
+                    </tr>                    
+                </table>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr id="zero">
+                        <th style="width:33%;" id="head-zero"><p id="secondary">IC/PASSPORT/REGISTRATION NO.</p></th>
+                        <th style="width:40%;" id="head-zero"><p id="secondary">NAME/COMPANY NAME/ADDRESS</p></th>
+                        <th style="width:27%;" id="head-zero"><p id="secondary" class="text-right">TOTAL OF SHARE</p></th>
+                    </tr>
+                    {% for shareholder in data.latest %}
+                        <tr style="height:20px;">
+                            <td><p id="secondary">{{ shareholder.id }}</p></td>
+                            <td><p id="secondary">
+                                {{ shareholder.name }} <br/>
+                                {% if shareholder.address1 %}
+                                    {{ shareholder.address1 }} <br/>
+                                {% endif %}
+                                {% if shareholder.address2 %}
+                                    {{ shareholder.address2 }} <br/>
+                                {% endif %}
+                                {% if shareholder.address3 %}
+                                    {{ shareholder.address3 }} <br/>
+                                {% endif %}
+                                {% if shareholder.town %}
+                                    {{ shareholder.town }} <br/>
+                                {% endif %}
+                                {% if shareholder.state %}
+                                    {{ shareholder.state }} <br/>
+                                {% endif %}
+                            </p></td>
+                            <td><p id="secondary" class="text-right">
+                                {% if shareholder.share %}
+                                    {{ shareholder.share | floatformat:0 | intcomma }}
+                                {% endif %}
+                            </p></td>
+                        </tr>    
+                    {% endfor %} 
+                </table>
+            </div> 
+
+            <h4 class="font-weight-bold text-center pg-break"><u>CHANGE OF SHAREHOLDING  </u></h4>
+
+            <div class="table-responsive">
+                <table class="table text-left" >
+                    <tr>
+                        <th style="width:30%; border: 0;"></th>
+                        <th style="width:1%; border: 0;"></th>
+                        <th style="width:69%; border: 0;"></th>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">NAME</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2">{{ data.company_info.name }}</p></td>
+                    </tr>
+                    <tr style="height:20px;">
+                        <td><p id="secondary">REGISTRATION NO.</p></td>
+                        <td><p id="secondary">:</p></td>
+                        <td><p id="secondary" class="pl-2"><b>{{data.company_info.registration_no}}</b></p></td>
+                    </tr>                    
+                </table>
+            </div>  
+
+            {% for change_ in data.changes %}
+                {% if forloop.counter >= 1 and forloop.counter <= 4 %}
+                    <p id="secondary">({{forloop.counter}}) Date of change in shareholder: {{change_.change_date}} </p>
+                    <div class="table-responsive">
+                        <table class="table text-left borderless">
+                            <tr id="zero">
+                                <th style="width:24%;" id="head-zero"><p id="secondary">IC/PASSPORT/REGISTRATION NO.</p></th>
+                                <th style="width:40%;" id="head-zero"><p id="secondary">NAME/COMPANY NAME/ADDRESS</p></th>
+                                <th style="width:12%" id="head-zero"><p id="secondary">SHARE IN</p></th>
+                                <th style="width:12%" id="head-zero"><p id="secondary">SHARE OUT</p></th>
+                                <th style="width:12%;" id="head-zero"><p id="secondary" class="text-right">TOTAL</p></th>
+                            </tr>
+                            {% for trx in change_.shareholding %}
+                            <tr style="height:20px;">
+                                <td><p id="secondary">{{ trx.id }}</p></td>
+                                <td><p id="secondary">
+                                    {{ trx.name }} <br/>
+                                    {% if trx.address1 %}
+                                        {{ trx.address1 }} <br/>
+                                    {% endif %}
+                                    {% if trx.address2 %}
+                                        {{ trx.address2 }} <br/>
+                                    {% endif %}
+                                    {% if trx.address3 %}
+                                        {{ trx.address3 }} <br/>
+                                    {% endif %}
+                                    {% if trx.town %}
+                                        {{ trx.town }} <br/>
+                                    {% endif %}
+                                    {% if trx.state %}
+                                        {{ trx.state }} <br/>
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary">
+                                    {% if trx.share_in %}
+                                        {{ trx.share_in | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary">
+                                    {% if trx.share_out %}
+                                        {{ trx.share_out | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary" class="text-right">
+                                    {% if trx.share_total %}
+                                        {{ trx.share_total | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                            </tr>  
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            
+            {% if data.changes|length > 4 %}
+                <h4 class="font-weight-bold text-center pg-break"><u> CHANGE OF SHAREHOLDING </u></h4>
+
+                <div class="table-responsive">
+                    <table class="table text-left" >
+                        <tr>
+                            <th style="width:30%; border: 0;"></th>
+                            <th style="width:1%; border: 0;"></th>
+                            <th style="width:69%; border: 0;"></th>
+                        </tr>
+                        <tr style="height:20px;">
+                            <td><p id="secondary">NAME</p></td>
+                            <td><p id="secondary">:</p></td>
+                            <td><p id="secondary" class="pl-2">{{ data.company_info.name }}</p></td>
+                        </tr>
+                        <tr style="height:20px;">
+                            <td><p id="secondary">REGISTRATION NO.</p></td>
+                            <td><p id="secondary">:</p></td>
+                            <td><p id="secondary" class="pl-2"><b>{{data.company_info.registration_no}}</b></p></td>
+                        </tr>                    
+                    </table>
+                </div>
+            {% endif %}
+
+            {% for change_ in data.changes %}
+                {% if forloop.counter >= 5 and forloop.counter <= 8 %}
+                    <p id="secondary">({{forloop.counter}}) Date of change in shareholder: {{change_.change_date}} </p>
+                    <div class="table-responsive">
+                        <table class="table text-left borderless">
+                            <tr id="zero">
+                                <th style="width:24%;" id="head-zero"><p id="secondary">IC / PASSPORT / REGISTRATION NO.</p></th>
+                                <th style="width:40%;" id="head-zero"><p id="secondary">NAME / COMPANY NAME / ADDRESS</p></th>
+                                <th style="width:12%" id="head-zero"><p id="secondary">SHARE IN</p></th>
+                                <th style="width:12%" id="head-zero"><p id="secondary">SHARE OUT</p></th>
+                                <th style="width:12%;" id="head-zero"><p id="secondary" class="text-right">TOTAL</p></th>
+                            </tr>
+                            {% for trx in change_.shareholding %}
+                            <tr style="height:20px;">
+                                <td><p id="secondary">{{ trx.id }}</p></td>
+                                <td><p id="secondary">
+                                    {{ trx.name }} <br/>
+                                    {% if trx.address1 %}
+                                        {{ trx.address1 }} <br/>
+                                    {% endif %}
+                                    {% if trx.address2 %}
+                                        {{ trx.address2 }} <br/>
+                                    {% endif %}
+                                    {% if trx.address3 %}
+                                        {{ trx.address3 }} <br/>
+                                    {% endif %}
+                                    {% if trx.town %}
+                                        {{ trx.town }} <br/>
+                                    {% endif %}
+                                    {% if trx.state %}
+                                        {{ trx.state }} <br/>
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary">
+                                    {% if trx.share_in %}
+                                        {{ trx.share_in | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary">
+                                    {% if trx.share_out %}
+                                        {{ trx.share_out | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary" class="text-right">
+                                    {% if trx.share_total %}
+                                        {{ trx.share_total | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+
+            {% if data.changes|length > 8 %}
+                <h4 class="font-weight-bold text-center pg-break"><u> CHANGE OF SHAREHOLDING </u></h4>
+
+                <div class="table-responsive">
+                    <table class="table text-left" >
+                        <tr>
+                            <th style="width:30%; border: 0;"></th>
+                            <th style="width:1%; border: 0;"></th>
+                            <th style="width:69%; border: 0;"></th>
+                        </tr>
+                        <tr style="height:20px;">
+                            <td><p id="secondary">NAME</p></td>
+                            <td><p id="secondary">:</p></td>
+                            <td><p id="secondary" class="pl-2">{{ data.company_info.name }}</p></td>
+                        </tr>
+                        <tr style="height:20px;">
+                            <td><p id="secondary">REGISTRATION NO.</p></td>
+                            <td><p id="secondary">:</p></td>
+                            <td><p id="secondary" class="pl-2"><b>{{data.company_info.registration_no}}</b></p></td>
+                        </tr>                    
+                    </table>
+                </div>
+            {% endif %}
+
+            {% for change in data.changes %}
+                {% if forloop.counter >= 9 and forloop.counter <= 10 %}
+                    <p id="secondary">({{forloop.counter}}) Date of change in shareholder: {{change.change_date}} </p>
+                    <div class="table-responsive">
+                        <table class="table text-left borderless">
+                            <tr id="zero">
+                                <th style="width:24%;" id="head-zero"><p id="secondary">IC / PASSPORT / REGISTRATION NO.</p></th>
+                                <th style="width:40%;" id="head-zero"><p id="secondary">NAME / COMPANY NAME / ADDRESS</p></th>
+                                <th style="width:12%" id="head-zero"><p id="secondary">SHARE IN</p></th>
+                                <th style="width:12%" id="head-zero"><p id="secondary">SHARE OUT</p></th>
+                                <th style="width:12%;" id="head-zero"><p id="secondary" class="text-right">TOTAL</p></th>
+                            </tr>
+                            <tr style="height:20px;">
+                                <td><p id="secondary">{{ change.id }}</p></td>
+                                <td><p id="secondary">
+                                    {{ change.name }} <br/>
+                                    {% if change.address1 %}
+                                        {{ change.address1 }} <br/>
+                                    {% endif %}
+                                    {% if change.address2 %}
+                                        {{ change.address2 }} <br/>
+                                    {% endif %}
+                                    {% if change.address3 %}
+                                        {{ change.address3 }} <br/>
+                                    {% endif %}
+                                    {% if change.town %}
+                                        {{ change.town }} <br/>
+                                    {% endif %}
+                                    {% if change.state %}
+                                        {{ change.state }} <br/>
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary">
+                                    {% if change.share_in %}
+                                        {{ change.share_in | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary">
+                                    {% if change.share_out %}
+                                        {{ change.share_out | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                                <td><p id="secondary" class="text-right">
+                                    {% if change.share_total %}
+                                        {{ change.share_total | floatformat:0 | intcomma }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </p></td>
+                            </tr>  
+                        </table>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            <div class="end-report">
+                <h4 id="end" class="font-weight-bold text-center">END OF REPORT</h4>
+    
+                <p style="margin-top:0;margin-bottom:0;font-size: 12pt" class="text-center">THIS INFORMATION OF CHANGE OF SHAREHOLDINGS IS EXTRACTED FROM THE COMPANY'S DOCUMENT REGISTERED AS OF 31 JANUARY 2017 BASED ON THE LAST TEN (10) DATE OF CHANGE IN SHAREHOLDING LODGED WITH SSM. </p>  
+                <p style="margin-top:0;margin-bottom:0;font-size: 12pt" class="text-center">THIS INFORMATION IS COMPUTER GENERATED. NO SIGNATURE IS REQUIRED.</p>
+                <p style="margin-top:5px;margin-bottom:10px;font-size: 12pt" class="text-center">REGISTRAR OF COMPANY, PENINSULAR MALAYSIA</p>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="row">
+                <p class="col text-center" style="margin-bottom:0px;font-size:10pt">USER ID: huzree@pipe.my</p>
+            </div>
+
+            <p class="text-center" style="margin-bottom:0;font-size:10pt">THIS COMPANY INFORMATION IS GENERATED / PRINTED AS AT {{data.generated_time}}</p>  
+            <p class="text-center" style="margin-top:0; margin-bottom:10px;font-size:10pt">MENARA SSM@SENTRAL, NO.7, JALAN STESEN SENTRAL 5, KUALA LUMPUR SENTRAL, 50623 KUALA LUMPUR<br>TEL: 03-7721 4000 FAX: 03-7721 4001</p>   
+        </footer>
+    </body>
+</html>
+

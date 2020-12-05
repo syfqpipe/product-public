@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 4.01cm 2.48cm 3.34cm 2.48cm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template p#secondary {
+                font-size: 18px;
+            }
+            .default-template p#disclaimer {
+                font-size: 16px;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 22px;
+                text-align: justify;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 15rem;
+            }
+            .pg-start {
+                margin-top: 15rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+        <div class="default-template container pg-start">
+            <div class="row">
+                <div class="col-2">
+                    <p id="disclaimer">
+                        PERHATIAN:
+                    </p>
+                </div>
+                
+                <div class="col-10">
+                    <p id="disclaimer">
+                        SUNGGUHPUN SEGALA USAHA TELAH DIAMBIL UNTUK MEMASTIKAN 
+                        MAKLUMAT YANG DIBERI ADALAH BETUL DAN TERKINI PENDAFTAR 
+                        SYARIKAT TIDAK BOLEH DIPERTANGGUNGKAN BAGI SEBARANG 
+                        KERUGIAN KERANA MAKLUMAT YANG TERSILAP ATAU TERTINGGAL.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-weight-bold text-center">PENGESAHAN PENAMATAN PENDAFTARAN SUATU PERNIAGAAN</h3>
+            <p id="secondary">NAMA: </p>
+            <p id="secondary">NO. PENDAFTARAN: </p>
+
+            <p id="secondary">
+                Mengikut rekod yang terdapat dalam simpanan Suruhanjaya Syarikat Malaysia 
+                sehingga {{data.currentDate}}, dengan ini disahkan perniagaan yang tersebut 
+                di atas telah tamat pendaftarannya pada {{data.endDate}}.
+                <br />
+            </p>
+
+            <p id="secondary">
+                Permohonan pembaharuan  pendaftaran sesebuah perniagaan boleh dibuat bila-bila 
+                masa sebelum tarikh tamat pendaftaran sehingga dua belas (12) bulan selepas 
+                tarikh tamat pendaftaran atau pembaharuan terdahulu.
+            </p>
+            
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

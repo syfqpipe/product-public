@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 27mm 10mm 27mm 10mm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container" style="margin-top: 15rem;">
+            <p>Although all efforts has been carried out to ensure that the information provided is 
+                accurate and up to date, the Registrat of Companies will not be liable for any losses 
+                arising from any inaccurate or omitted information.</p>
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** CORPORATE INFORMATION **</h3>
+
+                <div class="table-responsive">
+                    <table class="table text-left borderless">
+        
+                        <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyName']</td>                            
+                            </tr>
+                            <tr>
+                                <td>Last Old Name:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyOldName']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Date Of Change:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['dateOfChange']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Registration No.:</td>
+                                <td>XXXNewCoFormatXXX  ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyNo']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Incorporation Date:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['incorpDate']</td>                            
+                            </tr>   
+                                <td>Registration Date:</td>
+                                <td>Nil</td>                            
+                            </tr>       
+                            <tr>       
+                                <td>Type:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyType']</td>                            
+                            </tr>     
+                            <tr>       
+                                <td>Status:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyStatus']</td>                            
+                            </tr>  
+                            <tr>       
+                                <td>Registered Address:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['address1']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['address2']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['address3']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['town']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['state']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Postcode:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['postcode']</td>                            
+                            </tr> 
+                                <td>Origin:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['companyCountry']</td>                            
+                            </tr> 
+                                <td>Business Address:</td>
+                                <td>>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['address1']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['address2']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['address3']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['town']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['state']</td>
+
+                             <tr>       
+                                 <td>Postcode:</td>
+                                 <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['postcode']</td>
+                                                              
+                            </tr> 
+                            <tr>       
+                                <td>Nature Of Business:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBusinessAddressInfo']['businessDescription']</td>                            
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            
+
+
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** KEY FINANCIAL INFORMATION **</h3>
+            <p>Name: ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyName']</p>
+            <p>Registration No.: XXXNewCoFormatXXX  ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyNo']</p>
+            <p>Auditor: ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmName'] </p>
+            <p>Auditor Address: ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmAddress1']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmAddress2'] 
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmAddress3'] 
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmPostcode']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmTown']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmState']</p>
+            <p>Exempt Private Company (Y/N): ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['statusOfCompany']
+                                           
+                                            
+            </p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                        <tr>
+                        <tr>
+                            <td>Financial Year End:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['financialYearEndDate']</td>
+                        </tr>
+                            <td>Unqualified Reports (Y/N):</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['financialReportType']</td>
+                        </tr>
+                            <td>Consolidated Accounts (Y/N):</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['accrualAccType']</td>
+                        </tr>
+                            <td>Date of Tabling:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['dateOfTabling']</td>
+                        </tr>
+                            
+
+                        <tr>
+                            <td>BALANCE SHEET ITEMS</td>
+                            <td></td>
+                            <td></td>
+                        </tr> 
+                        <tr>
+                            <td>Non Current Asset:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['nonCurrAsset']</td>
+                        </tr>
+                            <td>Current Asset:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['currentAsset']</td>
+                        </tr>
+                            <td>Non Current Liabilities:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8[['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7[['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6[['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5[['nonCurrentLiability']</td>
+                    </tr>
+                            <td>Current Liabilities:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['liability']</td>
+                    </tr>
+                            <td>Share Capital:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['paidUpCapital']</td>
+                    </tr>
+                            <td>Reserves:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['reserves']</td>
+                    </tr>
+                            <td>Retained Earning:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['inappropriateProfit']</td>
+                    </tr>
+                            <td>Minority Interests:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][9]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][8]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][7]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][6]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][5]['minorityInterest']</td>
+                    </tr>
+                    </tr>
+
+                    <td>INCOME STATEMENT ITEMS</td>
+                            <td></td>
+                            <td></td>
+                        </tr> 
+                        <tr>
+                            <td>Revenue:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][9]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][8]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][7]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][6]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][5]['revenue']</td>
+                        </tr>
+                            <td>Profit/(Loss) before tax:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][9]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][8]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][7]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][6]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][5]['profitBeforeTax']</td>
+                        </tr>
+                            <td>Profit/(Loss) after tax:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][9]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][8]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][7]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][6]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][5]['profitAfterTax']</td>
+                        </tr>
+                            <td>Net dividend:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][9]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][8]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][7]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][6]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][5]['netDividend']</td>
+                        </tr>
+                            <td>Minority Interests:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][9]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][8]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][7]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][6]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][5]['minorityInterest']</td>
+                        </tr>
+              
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** KEY FINANCIAL INFORMATION **</h3>
+            <p>Name: ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyName']</p>
+            <p>Registration No.: XXXNewCoFormatXXX  ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyNo']</p>
+            <p>Auditor: ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmName'] </p>
+            <p>Auditor Address: ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmAddress1']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmAddress2'] 
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmAddress3'] 
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmPostcode']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmTown']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos']['auditFirmState']</p>
+            <p>Exempt Private Company (Y/N): ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['statusOfCompany']
+                                           
+                                            
+            </p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                        <tr>
+                        <tr>
+                            <td>Financial Year End:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['financialYearEndDate']</td>
+                        </tr>
+                            <td>Unqualified Reports (Y/N):</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['financialReportType']</td>
+                        </tr>
+                            <td>Consolidated Accounts (Y/N):</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['accrualAccType']</td>
+                        </tr>
+                            <td>Date of Tabling:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['dateOfTabling']</td>
+                        </tr>
+                            
+
+                        <tr>
+                            <td>BALANCE SHEET ITEMS</td>
+                            <td></td>
+                            <td></td>
+                        </tr> 
+                        <tr>
+                            <td>Non Current Asset:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['nonCurrAsset']</td>
+                        </tr>
+                            <td>Current Asset:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['currentAsset']</td>
+                        </tr>
+                            <td>Non Current Liabilities:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['nonCurrentLiability']</td>
+                    </tr>
+                            <td>Current Liabilities:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['liability']</td>
+                    </tr>
+                            <td>Share Capital:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['paidUpCapital']</td>
+                    </tr>
+                            <td>Reserves:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['reserves']</td>
+                    </tr>
+                            <td>Retained Earning:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['inappropriateProfit']</td>
+                    </tr>
+                            <td>Minority Interests:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][4]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][3]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][2]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['minorityInterest']</td>
+                    </tr>
+                    </tr>
+
+                    <td>INCOME STATEMENT ITEMS</td>
+                            <td></td>
+                            <td></td>
+                        </tr> 
+                        <tr>
+                            <td>Revenue:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][4]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][3]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][2]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['revenue']</td>
+                        </tr>
+                            <td>Profit/(Loss) before tax:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][4]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][3]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][2]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['profitBeforeTax']</td>
+                        </tr>
+                            <td>Profit/(Loss) after tax:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][4]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][3]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][2]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['profitAfterTax']</td>
+                        </tr>
+                            <td>Net dividend:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][4]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][3]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][2]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['netDividend']</td>
+                        </tr>
+                            <td>Minority Interests:</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][4]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][3]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][2]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['minorityInterest']</td>
+                        </tr>
+              
+        
+
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

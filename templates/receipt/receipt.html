@@ -1,0 +1,385 @@
+{% load humanize %}
+{% load tz %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                size: A4 portait;
+                /* margin: 4.01cm 2.48cm 3.34cm 2.48cm; */
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+
+                height: 14.5rem;
+                /* width: 100%; */
+            }
+            footer#footer {
+                position:fixed;
+                left: 0;
+                right: 0;
+                bottom:0;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 16px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 16px;
+            }
+            .default-template p#secondary {
+                font-size: 16px;
+            }
+            .default-template p#disclaimer {
+                font-size: 18px;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 22px;
+                text-align: justify;
+            }
+            table {border: 0;} 
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+
+            .table td, .table th {
+                border-top: 0px;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 15rem;
+            }
+            .pg-start {
+                margin-top: 15rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header" style="padding-top: 50px;" class="default-template container">
+            <div class="row">
+
+                <div class="col-6 text-left pt--4">
+                    <img alt="Logo" class="mb-2 text-right" style="width: 300px" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png" />
+                </div>
+
+                <div class="col-6 text-left pt-4">
+                    <h4 class="mb-0">SURUHANJAYA SYARIKAT MALAYSIA</h4>
+                    <p style="font-size: 16px">
+                        MENARA SSM @ SENTRAL <br />
+                        No 7, Jalan Stesen Sentral 5,<br />
+                        Kuala Lumpur Sentral,<br />
+                        50623 Kuala Lumpur.
+                    </p>
+                    <p style="font-size: 16px">
+                        Tel: 03-77214000 <br />
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <div class="default-template container pg-start">
+            <div class="text-center">
+                <h2 class="py-4">OFFICIAL RECEIPT</h2>
+            </div>
+
+            
+            <hr class="my-3 w-100" style="border-top: 1px dotted black;">
+
+            <div class="row text-left mt-4">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-auto">
+                            <p class="m-0">
+                                {{data.transaction.name}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-auto">
+                            <p class="m-0">
+                                {{data.transaction.address1}},
+                                {{data.transaction.address2}},
+                                {% if data.transaction.address3 %}
+                                    {{data.transaction.address3}},
+                                {% endif %}
+                                {{data.transaction.postcode}}, {{data.transaction.city}}
+                                {{data.transaction.state}},
+                                {{data.transaction.country}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <p class="m-0">
+                                {{data.transaction.email_address}}
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-auto">
+                            <p class="m-0">
+                                {{data.transaction.phone_number}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="m-0">Receipt No.</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="m-0">
+                                : {{data.transaction.receipt_no}}
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="m-0">Reference No.</p>
+                        </div>
+                        <div class="col">
+                            <p class="m-0">
+                                : {{data.transaction.reference_no}}
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="m-0">Mode of Payment</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="m-0">
+                                : 
+                                {% if data.transaction.payment_method == 'CC' %}
+                                    Credit Card
+                                {% endif %}
+
+                                {% if data.transaction.payment_method == 'DD' %}
+                                    Direct Debit
+                                {% endif %}
+
+                                {% if data.transaction.payment_method == 'WA' %}
+                                    e-Wallet
+                                {% endif %}
+
+                                {% if data.transaction.payment_method == 'NA' %}
+                                    Not Available
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="m-0">
+                                Transaction ID
+                            </p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="m-0">
+                                : {{data.transaction.transaction_id}}
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="m-0">
+                                Date & time
+                            </p>
+                        </div>
+                        <div class="col-auto"> 
+                            <p class="m-0">
+                                {% timezone "Asia/Kuala_Lumpur" %}
+                                : {{data.transaction.created_date | date:"d-m-Y"}} {{data.transaction.created_date | time:"g:i a"}}
+                                {% endtimezone %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="w-100">
+                        <table class="table text-right table-striped">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="text-left align-top" scope="col">
+                                        No.
+                                    </th>
+                                    <th class="text-left align-top" scope="col">
+                                        Item
+                                    </th>
+                                    <th class="text-left align-top" scope="col">
+                                        Product
+                                    </th>
+                                    <th class="text-left align-top" scope="col">
+                                        Unit
+                                    </th>
+                                    <th class="text-left align-top" scope="col">
+                                        Unit Price (RM)
+                                    </th>
+                                    <th class="text-left align-top" scope="col">
+                                        Total (RM)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="list">
+                                {% for item in data.cart_items %}
+                                <tr *ngFor="let item of items">
+                                    <td class="text-left" style ="word-break:break-all;">
+                                        <span>{{forloop.counter}}</span>
+                                    </td>
+                                    <td class="text-left" style ="word-break:break-all;" style ="word-break:break-all;">
+                                        {% if item.entity == 'CP' %}
+                                            {{item.entity.company_number_new}} 
+                                            ({{item.entity.company_number}}-{{item.entity.check_digit}})
+                                        {% endif %}
+
+                                        {% if item.entity == 'BS' %}
+                                            {{item.entity.registration_number_new}} 
+                                            ({{item.entity.registration_number}}-{{item.entity.check_digit}})
+                                        {% endif %}
+
+                                        {% if item.entity == 'AD' %}
+                                            {{item.entity.audit_firm_number}}
+                                        {% endif %}
+
+                                        {% if item.entity %}
+                                            {{item.entity.name}}
+                                        {% endif %}
+
+                                        {% if item.product_search_criteria %}
+                                            -
+                                        {% endif %}
+
+                                        {% if item.service_request %}
+                                            -
+                                        {% endif %}
+                                    </td>
+                                    
+                                    <td class="text-left" style ="word-break:break-all;">
+                                        {% if item.product %}
+                                            {{item.product.name}}
+                                        {% endif %}
+
+                                        {% if item.product.ctc %}
+                                            - CTC
+                                        {% endif %}
+
+                                        {% if item.image_form_type != 'NA' and item.image_form_type %}
+                                            {{item.image_form_type}}
+                                        {% endif %}
+
+                                        {% if item.service_request.service.entities_type == 'RB' and item.service_request.service.product_type == 'ST' %}
+                                            {{item.service_request.service.name}}
+                                        {% endif %}
+                                        
+                                        {% if item.service_request.service.entities_type == 'RB' and item.service_request.service.product_type == 'LS' %}
+                                            {{item.service_request.service.name}}
+                                        {% endif %}
+
+                                        {% if item.service_request.service.entities_type == 'RC' and item.service_request.service.product_type == 'ST' %}
+                                            {{item.service_request.service.name}}
+                                        {% endif %}
+
+                                        {% if item.service_request.service.entities_type == 'RC' and item.service_request.service.product_type == 'LS' %}
+                                            {{item.service_request.service.name}}
+                                        {% endif %}
+
+                                        {% if item.product_search_criteria %}
+                                            Customized Data Package A
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-left" style ="word-break:break-all;">
+                                        1
+                                    </td>
+                                    <td class="text-left" style ="word-break:break-all;">
+                                        {% if item.product %}
+                                            {{item.product.fee}}
+                                        {% endif %}
+
+                                        {% if item.product_search_criteria %}
+                                            RM4.00 / company
+                                        {% endif %}
+
+                                        {% if item.service_request %}
+                                            {{item.service_request.service.fee}}
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-left" style ="word-break:break-all;">
+                                        {% if item.product %}
+                                            {{item.product.fee}}
+                                        {% endif %}
+
+                                        {% if item.product_search_criteria %}
+                                            {{item.product_search_criteria.total_price}}
+                                        {% endif %}
+
+                                        {% if item.service_request %}
+                                            {{item.service_request.service.fee}}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="4"></th>
+                                    <th class="text-left font-weight-bolder">Total</th>
+                                    <th class="text-left font-weight-bolder">{{ data.transaction.total_amount }}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+    <footer id="footer" class="default-template">
+        <h5 class="text-center">Thank you!</h5>
+        <p class="description text-center">
+            If you encounter any issues related to the invoice you can
+            contact us at email: enquiry@ssm.com.my
+        </p>
+        <p class="description text-center">
+            This receipt is computer generated, no signature required.
+        </p>
+    </footer>
+</html>
+

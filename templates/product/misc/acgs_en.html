@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 4.01cm 2.48cm 3.34cm 2.48cm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: Arial, sans-serif;
+            }
+            .default-template p#secondary {
+                word-spacing: 7pt;
+                font-size: 21px;
+                text-align: justify;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 22px;
+                text-align: justify;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 15rem;
+            }
+            .pg-start {
+                margin-top: 15rem;
+            }
+            ol#aol {
+                list-style-type: lower-latin;
+            }
+            ol#bol {
+                list-style-type: decimal;
+            }
+            ol li {
+                word-spacing: 7pt;
+                font-size: 20px;
+                text-align: justify;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container pg-start">
+            <h1 class="font-weight-bold text-center mb-0">
+                ATTETATION OF COMPANY
+            </h1>
+            <h1 class="font-weight-bold text-center mt-0">
+                GOOD STANDING
+            </h1>
+
+            <h2 class="font-weight-bold mb-1 text-center">
+                {{data.compName}}
+            </h2>
+
+            <h2 class="font-weight-bold mb-7 text-center">
+                {{data.compNoNew}} ({{data.compNoOld}})
+            </h2>
+
+            <p id="primary" class="mt-7">
+                This is to confirm that the above company was incorporated on
+                {{data.incorpDate}} as a private company. The company has complied with 
+                the requirements for the issuance of this attestation and in 
+                compliance with the Companies Act 2016.
+            </p>
+
+            <p id="primary">
+                Based on documents lodged with the Companies Commission of Malaysia:
+            </p>
+
+            <ol id="aol">
+                <li>
+                    The company is not in the process of being wound up or dissolved;
+                </li>
+
+                <li>
+                    The company has lodged its latest annual return and financial 
+                    statements or certificate relating to an exempt private company 
+                    accordingly; and
+                </li>
+                <li>
+                    The registered address of the company is at {{data.regAddress_address1}}, 
+                    {{data.regAddress_address2}}, {{data.regAddress_address3}}, {{data.regAddress_postcode}},
+                    {{data.regAddress_town}}, {{data.regAddress_state}}.
+                </li>
+            </ol>
+
+            <p id="primary" class="mt-0">
+                The above particulars are extracted from documents registered.
+            </p>
+
+            <h1 class="font-weight-bold text-center pg-break mb-0">
+                CRITERIA FOR THE ISSUANCE OF
+            </h1>
+            <h1 class="font-weight-bold text-center mt-0 mb-7">
+                ATTESTATION OF COMPANY GOOD STANDING
+            </h1>
+
+            <p id="primary" class="mt-7">
+                Attestation of Company Good Standing (ACGS) is a confirmation that 
+                a company has met the criteria that was set in the issuance of this ACGS.
+            </p>
+
+            <h3 class="font-weight-bold">
+                Product Overview
+            </h3>
+            <p id="primary">
+                ACGS will state the company name, registration number, incorporation date, 
+                whether the company is a private or public company and the registered address 
+                of the company. As an added feature, recipient can scan the QR Code from the 
+                print-out and able to view the stored copy of the ACGS as well as make comparison 
+                to verify the contents and ensure that there is no alteration made to the print-out.
+            </p>
+            
+            <h3 class="font-weight-bold">
+                ACGS Product Criteria
+            </h3>
+
+            <p id="pimary" class="mb-0">
+                The company must meet the criteria as listed below:
+            </p>
+            <ol id="bol">
+                <li>
+                    The company has been incorporated for at least 18 months from the date of the ACGS;
+                </li>
+                <li>
+                    The company has lodged its latest annual return and audited financial 
+                    statements or certificate relating to an exempt private company;
+                </li>
+                <li>
+                    The company is in existence and not in the process of being wound up 
+                    or struck off or dissolved;
+                </li>
+                <li>
+                    The company is not dormant as per nature of business;
+                </li>
+                <li>
+                    The company has a registered address;
+                </li>
+                <li>
+                    The company or its directors do not have any outstanding compound; 
+                    and
+                </li>
+                <li>
+                    The company or its directors do not have any pending prosecution 
+                    case.
+                </li>
+            </ol>
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

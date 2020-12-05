@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 27mm 10mm 27mm 10mm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container" style="margin-top: 15rem;">
+            <p>Although all efforts has been carried out to ensure that the information provided is 
+                accurate and up to date, the Registrat of Companies will not be liable for any losses 
+                arising from any inaccurate or omitted information.</p>
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** PARTICULAR OF REGISTERED ADDRESS **</h3>
+
+                <div class="table-responsive">
+                    <table class="table text-left borderless">
+
+                        <tr></tr>
+                            <td>CORPORATE INFORMATION</td>
+        
+                        <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyName']</td>                            
+                            </tr>
+                            <tr>
+                                <td>Last Old Name:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyOldName']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Date Of Change:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['dateOfChange']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Company Number:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyNo']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Incorporation Date:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['incorpDate']</td>                            
+                            </tr>       
+                            <tr>       
+                                <td>Registration Date:</td>
+                                <td>Nil</td>                            
+                            </tr>     
+                            <tr>       
+                                <td>Type:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyType']</td>                            
+                            </tr>     
+                            <tr>       
+                                <td>Status:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyStatus']</td>                            
+                            </tr>  
+                            <tr>       
+                                <td>Registered Address:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocRegAddressInfo']['address1']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocRegAddressInfo']['address2']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocRegAddressInfo']['address3']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocRegAddressInfo']['town']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocRegAddressInfo']['state']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Postcode:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocRegAddressInfo']['postcode']</td>                            
+                            </tr> 
+                                <td>Origin:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyCountry']</td>                            
+                            </tr> 
+                                <td>Business Address:</td>
+                                <td>>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocBusinessAddressInfo']['address1']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocBusinessAddressInfo']['address2']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocBusinessAddressInfo']['address3']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocBusinessAddressInfo']['town']
+                                    ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocBusinessAddressInfo']['state']</td>
+
+                             <tr>       
+                                 <td>Postcode:</td>
+                                 <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocBusinessAddressInfo']['postcode']</td>
+                                                              
+                            </tr> 
+                            <tr>       
+                                <td>Nature Of Business:</td>
+                                <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['businessDescription']</td>                            
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            
+
+
+
+        <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">
+                               
+            </h3>
+                <div class="table-responsive">
+                <p>Name: ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyName']</p>
+                <p>Company Number: ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocCompanyInfo']['companyNo']</p>
+                <p>Date of changes as of ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['changeOfDate'] </p>
+                
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                     
+                        <tr>
+                            <td>CHANGES OF REGISTERED ADDRESS</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Date of change</td>
+                            <td>Registered address</td>
+                        </tr>
+                        <tr>
+                            <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['changeOfDate']</td>
+                            <td>['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['address1']
+                                ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['address2']
+                                ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['address3']
+                                ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['postcode']
+                                ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['town']
+                                ['Body']['getRocChangesRegisteredAddressResponse']['response']['getRocChangesRegisteredAddressReturn']['rocChangesRegAddressListInfo']['rocChangesRegAddressInfo']['rocChangesRegAddressInfo']['state']</td>
+                        </tr>
+
+                
+                    </tbody>
+                </table>
+            </div>
+            
+
+                        </tr>
+
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

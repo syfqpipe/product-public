@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 4.01cm 2.48cm 3.34cm 2.48cm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template p#secondary {
+                font-size: 18px;
+            }
+            .default-template p#disclaimer {
+                font-size: 16px;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 22px;
+                text-align: justify;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 15rem;
+            }
+            .pg-start {
+                margin-top: 15rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+        <div class="default-template container pg-start">
+            <p id="disclaimer">
+                ALTHOUGH ALL EFFORTS HAVE BEEN CARRIED OUT TO ENSURE 
+                THAT THE INFORMATION PROVIDED IS ACCURATE AND UP TO 
+                DATE, THE REGISTRAR OF COMPANIES WILL NOT BE LIABLE 
+                FOR ANY LOSSES ARISING FROM ANY INACCURATE OR OMITTED 
+                INFORMATION.
+            </p>
+            <h2 class="font-weight-bold text-center">PARTICULARS OF REGISTERED ADDRESS</h2>
+            <h3 class="font-weight-bold text-center">*** CORPORATE INFORMATION ***</h3>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p id="secondary">COMPANY NAME</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.compName}}</p>
+                            </td>                            
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <p id="secondary">LAST OLD NAME</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.compNameOld}}</p>
+                            </td>                            
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p id="secondary">DATE OF CHANGE</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.changeDate}}</p>
+                            </td>                            
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p id="secondary">REGISTRATION DATE</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.regDate}}</p>
+                            </td>                            
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p id="secondary">COMPANY NUMBER</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.compNo}}</p>
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <p id="secondary">TYPE</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.compType}}</p>
+                                <p id="secondary">: {{data.corpInfo.compStatus}}</p>
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <p id="secondary">STATUS</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.statusOfCompany}}</p> 
+                            </td>                            
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">REGISTERED ADDRESS</p>
+                            </td>
+                            <td>
+                                {% if data.corpInfo.regAddress1 %}
+                                <p id="secondary" class="mb-0">: {{data.corpInfo.regAddress1}} </p>
+                                {% else %}
+                                <p id="secondary">: NIL</p>
+                                {% endif %}
+                                {% if data.corpInfo.regAddress2 %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.regAddress2}} </p>
+                                {% endif %}
+                                {% if data.corpInfo.regAddress3 %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.regAddress3}} </p>
+                                {% endif %}
+                                {% if data.corpInfo.regTown %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.regTown}}  </p>
+                                {% endif %}
+                                {% if data.corpInfo.regState %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.regState}} </p>
+                                {% endif %}
+                            </td>                            
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p id="secondary">POSTCODE</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.regPostcode}}</p>
+                            </td>                            
+                        </tr>     
+                        <tr>
+                            <td>
+                                <p id="secondary">ORIGIN</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.regOrigin}}</p>
+                            </td>                            
+                        </tr>  
+                        <tr>       
+                            <td>
+                                <p id="secondary">BUSINESS ADDRESS</p>
+                            </td>
+                            <td>
+                                {% if data.corpInfo.bizAddress1 %}
+                                <p id="secondary" class="mb-0">: {{data.corpInfo.bizAddress1}} </p>
+                                {% else %}
+                                <p id="secondary">: NIL</p>
+                                {% endif %}
+                                {% if data.corpInfo.bizAddress2 %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.bizAddress2}} </p>
+                                {% endif %}
+                                {% if data.corpInfo.bizAddress3 %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.bizAddress3}} </p>
+                                {% endif %}
+                                {% if data.corpInfo.bizTown %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.bizTown}}  </p>
+                                {% endif %}
+                                {% if data.corpInfo.bizState %}
+                                <p id="secondary" class="my-0">: {{data.corpInfo.bizState}} </p>
+                                {% endif %}
+                            </td>                            
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p id="secondary">POSTCODE</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.bizPostcode}}</p>
+                            </td>                            
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p id="secondary">NATURE OF BUSINESS</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.corpInfo.bizNature}}</p>
+                            </td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="font-weight-bold text-center pg-break">*** CHANGES OF REGISTERED ADDRESS ****</h3>
+            <p id="secondary">NAME: {{data.corpInfo.compName}}</p>
+            <p id="secondary">REGISTRATION NO.: {{data.corpInfo.changeDate}}</p>
+
+            <p id="disclaimer">*Date of changes as of {{data.lastUpdateDate}}</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <thead>
+                        <tr>
+                            <td>
+                                <p id="secondary">DATE OF CHANGE</p>
+                            </td>
+                            <td>
+                                <p id="secondary">REGISTERED ADDRESS</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for address in data.changeRegAddress %}
+                        <tr>
+                            <td>
+                                <p id="secondary">: {{address.changeDate}}</p>
+                            </td>   
+                            <td>
+                                {% if address.address1 %}
+                                <p id="secondary" class="mb-0">: {{address.address1}} </p>
+                                {% else %}
+                                <p id="secondary">: NIL</p>
+                                {% endif %}
+                                {% if address.address2 %}
+                                <p id="secondary" class="my-0">: {{address.address2}} </p>
+                                {% endif %}
+                                {% if address.adress3 %}
+                                <p id="secondary" class="my-0">: {{address.adress3}} </p>
+                                {% endif %}
+                                {% if address.postcode %}
+                                <p id="secondary" class="my-0">: {{address.postcode}}, {{address.town}}  </p>
+                                {% endif %}
+                                {% if address.state %}
+                                <p id="secondary" class="my-0">: {{address.state}} </p>
+                                {% endif %}
+                            </td>                          
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+
+            {% for previous in data.ownerPreviousInfo %}
+            <h3 class="font-weight-bold text-center pg-break">*** PREVIOUS DIRECTORS/OFFICERS ****</h3>
+            <p id="secondary">NAME: {{data.corpInfo.registrationName}}</p>
+            <p id="secondary">REGISTRATION NO.: {{data.corpInfo.compNoNew}} {{data.corpInfo.registrationNo}}</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p id="secondary">NAME</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.name}}</p>
+                            </td>                            
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">RESIDENTIAL ADDRESS</p>
+                            </td>
+                            <td>
+                                {% if previous.address_1 %}
+                                <p id="secondary" class="mb-0">: {{previous.address_1}} </p>
+                                {% else %}
+                                <p id="secondary">: NIL</p>
+                                {% endif %}
+                                {% if previous.address_2 %}
+                                <p id="secondary" class="my-0">: {{previous.address_2}} </p>
+                                {% endif %}
+                                {% if previous.address_3 %}
+                                <p id="secondary" class="my-0">: {{previous.address_3}} </p>
+                                {% endif %}
+                                {% if previous.postcode %}
+                                <p id="secondary" class="my-0">: {{previous.postcode}}, {{previous.town}}  </p>
+                                {% endif %}
+                                {% if previous.state %}
+                                <p id="secondary" class="my-0">: {{previous.state}} </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>         
+                        <tr>       
+                            <td>
+                                <p id="secondary">IC (OLD)</p>
+                            </td>
+                            <td>
+                                {% if previous.icNoOld %}
+                                <p id="secondary" class="my-0">: {{previous.icNoOld}} </p>
+                                {% else %}
+                                <p id="secondary">: </p>
+                                {% endif %}
+                            </td>                            
+                        </tr> 
+                        <tr>       
+                            <td>
+                                <p id="secondary">IC (NEW)</p>
+                            </td>
+                            <td>
+                                {% if previous.icNoNew %}
+                                <p id="secondary" class="my-0">: {{previous.icNoNew}} </p>
+                                {% else %}
+                                <p id="secondary">: </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>        
+                        <tr>       
+                            <td>
+                                <p id="secondary">DATE OF BIRTH</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.birthDate}}</p>
+                            </td>                            
+                        </tr>       
+                        <tr>       
+                            <td>
+                                <p id="secondary">RACE</p></td>
+                            <td>
+                                <p id="secondary">: {{previous.race}}</p>
+                            </td>                            
+                        </tr>     
+                        <tr>       
+                            <td>
+                                <p id="secondary">GENDER</p></td>
+                            <td>
+                                <p id="secondary">: {{previous.gender}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">NATIONALITY</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.nationality}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">DATE OF ENTRY</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.entryDate}}</p>
+                            </td>
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">DATE OF WITHDRAWAL</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.withdrawDate}}</p>
+                            </td>
+
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">REASON OF WITHDRAWAL</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.ammendmentType}}</p>
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

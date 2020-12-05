@@ -1,0 +1,1355 @@
+{% if data.allotment_info|length > 2 %}
+<h4 class="font-weight-bold text-center pg-break"><u>  MAKLUMAT SYER </u></h4>
+
+<div class="table-responsive">
+    <table class="table text-left">
+        <tr>
+            <th style="width:30%; border: 0;"></th>
+            <th style="width:1%; border: 0;"></th>
+            <th style="width:69%; border: 0;"></th>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NAMA</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2">{{ data.company_info.companyName }}</p></td>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NO. PENDAFTARAN:</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2"><b>{{data.company_no}}</b></p></td>
+        </tr>                    
+    </table>
+</div>           
+
+<ol start="3">
+    {% for allotment in data.allotment_info %}
+        {% if forloop.counter == 3 or forloop.counter == 4 %}
+        <li>
+            <p id="secondary"><b>TARIKH PENGUMPUKKAN: {{allotment.dtAllot}}</b></p>
+            <p id="secondary">(A)     PENGUMPUKKAN SYER</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr style="height:20px;">
+                        <td style="width: 10%;"><p id="secondary"><b>KELAS SYER</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SELAIN DARIPADA TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SYER DITERBITKAN</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>JUMLAH SYER DITERBITKAN (RM)</b></p></td>
+                    </tr>    
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'ORDINARY A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'ORDINARY B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'PREFERENCE A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'PREFERENCE B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">LAIN-LAIN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">JUMLAH</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {{allotment.issuedShare | floatformat:0 | intcomma}}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                        </p></td>
+                    </tr>
+                </table>
+            </div>
+
+            <p id="secondary">(B)     BUTIR-BUTIR PENERIMA UMPUKKAN</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr>
+                        <th style="width:10%;">NO</th>
+                        <th style="width:30%;">NAMA / NAMA SYARIKAT / ALAMAT</th>
+                        <th style="width:30%;">KP / PASSPORT / NO.PENDAFTARAN</th> 
+                        <th style="width:30%;">BILANGAN SYER</th> 
+                    </tr>
+                    {% for allotee in allotment.allotee %}
+                    <tr>
+                        <td><p id="secondary">
+                            {{forloop.counter}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeName}} <br />
+                            {% if allotee.address.address1 or allotee.address.address1 != None %}
+                                {{allotee.address.address1}} <br />
+                            {% endif %}
+                            {% if allotee.address.address2 or allotee.address.address2 != None %}
+                                {{allotee.address.address2}} <br />
+                            {% endif %}
+                            {% if allotee.address.address3 or allotee.address.address3 != None %}
+                                {{allotee.address.address3}} <br />
+                            {% endif %}
+                            {% if allotee.address.town or allotee.address.town != None %}
+                                {{allotee.address.town}} <br />
+                            {% endif %}
+                            {% if allotee.address.state or allotee.address.state != None %}
+                                {{allotee.address.state}}
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeId}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.noOfShares | floatformat:0 | intcomma}}
+                        </p></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ol>
+{% endif %}
+
+{% if data.allotment_info|length > 4 %}
+<h4 class="font-weight-bold text-center pg-break"><u>  MAKLUMAT SYER </u></h4>
+
+<div class="table-responsive">
+    <table class="table text-left">
+        <tr>
+            <th style="width:30%; border: 0;"></th>
+            <th style="width:1%; border: 0;"></th>
+            <th style="width:69%; border: 0;"></th>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NAMA</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2">{{ data.company_info.companyName }}</p></td>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NO. PENDAFTARAN:</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2"><b>{{data.company_no}}</b></p></td>
+        </tr>                    
+    </table>
+</div>           
+
+<ol start="5">
+    {% for allotment in data.allotment_info %}
+        {% if forloop.counter == 5 or forloop.counter == 6 %}
+        <li>
+            <p id="secondary"><b>TARIKH PENGUMPUKKAN: {{allotment.dtAllot}}</b></p>
+            <p id="secondary">(A)     PENGUMPUKKAN SYER</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr style="height:20px;">
+                        <td style="width: 10%;"><p id="secondary"><b>KELAS SYER</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SELAIN DARIPADA TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SYER DITERBITKAN</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>JUMLAH SYER DITERBITKAN (RM)</b></p></td>
+                    </tr>    
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'ORDINARY A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'ORDINARY B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'PREFERENCE A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'PREFERENCE B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.issuedShare | floatformat:0 | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">LAIN-LAIN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                </table>
+            </div>
+
+            <p id="secondary">(B)     BUTIR-BUTIR PENERIMA UMPUKKAN</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr>
+                        <th style="width:10%;">NO</th>
+                        <th style="width:30%;">NAMA / NAMA SYARIKAT / ALAMAT</th>
+                        <th style="width:30%;">KP / PASSPORT / NO.PENDAFTARAN</th> 
+                        <th style="width:30%;">BILANGAN SYER</th> 
+                    </tr>
+                    {% for allotee in allotment.allotee %}
+                    <tr>
+                        <td><p id="secondary">
+                            {{forloop.counter}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeName}} <br />
+                            {% if allotee.address.address1 or allotee.address.address1 != None %}
+                                {{allotee.address.address1}} <br />
+                            {% endif %}
+                            {% if allotee.address.address2 or allotee.address.address2 != None %}
+                                {{allotee.address.address2}} <br />
+                            {% endif %}
+                            {% if allotee.address.address3 or allotee.address.address3 != None %}
+                                {{allotee.address.address3}} <br />
+                            {% endif %}
+                            {% if allotee.address.town or allotee.address.town != None %}
+                                {{allotee.address.town}} <br />
+                            {% endif %}
+                            {% if allotee.address.state or allotee.address.state != None %}
+                                {{allotee.address.state}}
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeId}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.noOfShares | floatformat:0 | intcomma}}
+                        </p></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ol>
+{% endif %}
+
+{% if data.allotment_info|length > 6 %}
+<h4 class="font-weight-bold text-center pg-break"><u>  MAKLUMAT SYER </u></h4>
+
+<div class="table-responsive">
+    <table class="table text-left">
+        <tr>
+            <th style="width:30%; border: 0;"></th>
+            <th style="width:1%; border: 0;"></th>
+            <th style="width:69%; border: 0;"></th>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NAMA</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2">{{ data.company_info.companyName }}</p></td>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NO. PENDAFTARAN:</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2"><b>{{data.company_no}}</b></p></td>
+        </tr>                    
+    </table>
+</div>           
+
+<ol start="7">
+    {% for allotment in data.allotment_info %}
+        {% if forloop.counter == 7 or forloop.counter == 8 %}
+        <li>
+            <p id="secondary"><b>TARIKH PENGUMPUKKAN: {{allotment.dtAllot}}</b></p>
+            <p id="secondary">(A)     PENGUMPUKKAN SYER</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr style="height:20px;">
+                        <td style="width: 10%;"><p id="secondary"><b>KELAS SYER</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SELAIN DARIPADA TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SYER DITERBITKAN</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>JUMLAH SYER DITERBITKAN (RM)</b></p></td>
+                    </tr>    
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'ORDINARY A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'ORDINARY B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'PREFERENCE A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'PREFERENCE B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">LAIN-LAIN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">JUMLAH</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {{allotment.issuedShare | intcomma}}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                        </p></td>
+                    </tr>
+                </table>
+            </div>
+
+            <p id="secondary">(B)     BUTIR-BUTIR PENERIMA UMPUKKAN</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr>
+                        <th style="width:10%;">NO</th>
+                        <th style="width:30%;">NAMA / NAMA SYARIKAT / ALAMAT</th>
+                        <th style="width:30%;">KP / PASSPORT / NO.PENDAFTARAN</th> 
+                        <th style="width:30%;">BILANGAN SYER</th> 
+                    </tr>
+                    {% for allotee in allotment.allotee %}
+                    <tr>
+                        <td><p id="secondary">
+                            {{forloop.counter}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeName}} <br />
+                            {% if allotee.address.address1 or allotee.address.address1 != None %}
+                                {{allotee.address.address1}} <br />
+                            {% endif %}
+                            {% if allotee.address.address2 or allotee.address.address2 != None %}
+                                {{allotee.address.address2}} <br />
+                            {% endif %}
+                            {% if allotee.address.address3 or allotee.address.address3 != None %}
+                                {{allotee.address.address3}} <br />
+                            {% endif %}
+                            {% if allotee.address.town or allotee.address.town != None %}
+                                {{allotee.address.town}} <br />
+                            {% endif %}
+                            {% if allotee.address.state or allotee.address.state != None %}
+                                {{allotee.address.state}}
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeId}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.noOfShares | floatformat:0 | intcomma}}
+                        </p></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ol>
+{% endif %}
+
+{% if data.allotment_info|length > 8 %}
+<h4 class="font-weight-bold text-center pg-break"><u>  MAKLUMAT SYER </u></h4>
+
+<div class="table-responsive">
+    <table class="table text-left">
+        <tr>
+            <th style="width:30%; border: 0;"></th>
+            <th style="width:1%; border: 0;"></th>
+            <th style="width:69%; border: 0;"></th>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NAMA</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2">{{ data.company_info.companyName }}</p></td>
+        </tr>
+        <tr style="height:8px;">
+            <td><p id="secondary">NO. PENDAFTARAN:</p></td>
+            <td><p id="secondary">:</p></td>
+            <td><p id="secondary" class="pl-2"><b>{{data.company_no}}</b></p></td>
+        </tr>                    
+    </table>
+</div>           
+
+<ol start="9">
+    {% for allotment in data.allotment_info %}
+        {% if forloop.counter == 9 or forloop.counter == 10 %}
+        <li>
+            <p id="secondary"><b>TARIKH PENGUMPUKKAN: {{allotment.dtAllot}}</b></p>
+            <p id="secondary">(A)     PENGUMPUKKAN SYER</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr style="height:20px;">
+                        <td style="width: 10%;"><p id="secondary"><b>KELAS SYER</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SELAIN DARIPADA TUNAI</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>SYER DITERBITKAN</b></p></td>
+                        <td style="width: 22.5%;"><p id="secondary" class="text-right"><b>JUMLAH SYER DITERBITKAN (RM)</b></p></td>
+                    </tr>    
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'ORDINARY A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'ORDINARY B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">BIASA B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'ORDINARY B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    {% if allotment.shareType == 'PREFERENCE A' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN A</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE A' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    {% if allotment.shareType == 'PREFERENCE B' %}
+                    <tr style="height:20px;">
+                        <td><p id="secondary">PREFEREN B</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'PREFERENCE B' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+                    {% endif %}
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">LAIN-LAIN</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' and allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareType == 'OTHERS' %}
+                                {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                            {% else %}
+                                0.000
+                            {% endif %}
+                        </p></td>
+                    </tr>
+
+                    <tr style="height:20px;">
+                        <td><p id="secondary">JUMLAH</p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareDtl == 'CASH' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {% if allotment.shareDtl == 'OTHERWISE' %}
+                                {{allotment.issuedShare | intcomma}}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {{allotment.issuedShare | intcomma}}
+                        </p></td>
+                        <td><p id="secondary" class="text-right">
+                            {{allotment.totalIssuedShare | floatformat:4 | intcomma}}
+                        </p></td>
+                    </tr>
+                </table>
+            </div>
+
+            <p id="secondary">(B)     BUTIR-BUTIR PENERIMA UMPUKKAN</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tr>
+                        <th style="width:10%;">NO</th>
+                        <th style="width:30%;">NAMA / NAMA SYARIKAT / ALAMAT</th>
+                        <th style="width:30%;">KP / PASSPORT / NO.PENDAFTARAN</th> 
+                        <th style="width:30%;">BILANGAN SYER</th> 
+                    </tr>
+                    {% for allotee in allotment.allotee %}
+                    <tr>
+                        <td><p id="secondary">
+                            {{forloop.counter}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeName}} <br />
+                            {% if allotee.address.address1 or allotee.address.address1 != None %}
+                                {{allotee.address.address1}} <br />
+                            {% endif %}
+                            {% if allotee.address.address2 or allotee.address.address2 != None %}
+                                {{allotee.address.address2}} <br />
+                            {% endif %}
+                            {% if allotee.address.address3 or allotee.address.address3 != None %}
+                                {{allotee.address.address3}} <br />
+                            {% endif %}
+                            {% if allotee.address.town or allotee.address.town != None %}
+                                {{allotee.address.town}} <br />
+                            {% endif %}
+                            {% if allotee.address.state or allotee.address.state != None %}
+                                {{allotee.address.state}}
+                            {% endif %}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.alloteeId}}
+                        </p></td>
+                        <td><p id="secondary">
+                            {{allotee.noOfShares | floatformat:0 | intcomma}}
+                        </p></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ol>
+{% endif %}

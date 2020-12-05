@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 27mm 10mm 27mm 10mm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container" style="margin-top: 15rem;">
+            <p>Although all efforts has been carried out to ensure that the information provided is 
+                accurate and up to date, the Registrat of Companies will not be liable for any losses 
+                arising from any inaccurate or omitted information.</p>
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** CORPORATE INFORMATION **</h3>
+
+                <div class="table-responsive">
+                    <table class="table text-left borderless">
+        
+                        <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyName']</td>                            
+                            </tr>
+                            <tr>
+                                <td>Last Old Name:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyOldName']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Date Of Change:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['dateOfChange']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Registration No.:</td>
+                                <td>XXXNewCoFormatXXX  ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyNo']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Incorporation Date:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['incorpDate']</td>                            
+                            </tr>      
+                            <tr>       
+                                <td>Type:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyType']</td>                            
+                            </tr>     
+                            <tr>       
+                                <td>Status:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyStatus']</td>                            
+                            </tr>  
+                            <tr>       
+                                <td>Registered Address:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['address1']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['address2']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['address3']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['town']
+                                    ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['state']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Postcode:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocRegAddressInfo']['postcode']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Nature Of Business:</td>
+                                <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['businessDescription']</td>                            
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            
+
+
+
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** FINANCIAL HISTORICAL COMPARISON **</h3>
+            <p>Name: ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyName']</p>
+            <p>Registration No.: XXXNewCoFormatXXX  ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo']['companyNo']</p>
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                        <tr>
+                            <td>AUDITOR</td>
+                            <td></td>
+                            <td></td>
+                        </tr>                         
+
+                        <tr>
+                            <td>Auditor</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmName']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmNo']</td>    
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmName']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmNo']</td>
+                        </tr>                        
+                        <tr>
+                            <td>Auditor Address</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmAddress1']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmAddress2']  
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmAddress3']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmPostcode']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmTown']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['auditFirmState']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmAddress1']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmAddress2']  
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmAddress3']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmPostcode']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmTown']
+                                ['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['auditFirmState']</tr>
+                        <tr>
+                            <td>Exempt Private Company</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo'][0]['statusOfCompany']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocCompanyInfo'][1]['statusOfCompany']</td>
+                        </tr>
+                        <tr>
+                            <td>Financial Year End</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['financialYearEndDate']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['financialYearEndDate']</td>
+                        </tr>
+                            <td>Unqualified Report (Y/N)</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['financialReportType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['financialReportType']</td>
+                        </tr>
+                            <td>Consolidated Account (Y/N)</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['accrualAccType']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['accrualAccType']</td>
+                        </tr>
+                            <td>Date of Tabling</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['dateOfTabling']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['dateOfTabling']</td>
+                        </tr>
+                            
+
+                        <tr>
+                            <td>BALANCE SHEET ITEMS</td>
+                            <td></td>
+                            <td></td>
+                        </tr> 
+                        <tr>
+                            <td>Non Current Asset</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['nonCurrAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['nonCurrAsset']</td>
+                        </tr>
+                            <td>Current Asset</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['currentAsset']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['currentAsset']</td>
+                        </tr>
+                            <td>Non Current Liabilities</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['nonCurrentLiability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['nonCurrentLiability']</td>
+                    </tr>
+                            <td>Current Liabilities</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['liability']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['liability']</td>
+                    </tr>
+                            <td>Share Capital</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['paidUpCapital']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['paidUpCapital']</td>
+                    </tr>
+                            <td>Reserve</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['reserves']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['reserves']</td>
+                    </tr>
+                            <td>Retained Earning</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['inappropriateProfit']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['inappropriateProfit']</td>
+                    </tr>
+                            <td>Minority Interest</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][0]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocBalanceSheetListInfo']['rocBalanceSheetInfos'][1]['minorityInterest']</td>
+                    </tr>
+
+                    <td>INCOME STATEMENT ITEMS</td>
+                            <td></td>
+                            <td></td>
+                        </tr> 
+                        <tr>
+                            <td>Revenue</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['revenue']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['revenue']</td>
+                        </tr>
+                            <td>Profit/(loss) before tax</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['profitBeforeTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['profitBeforeTax']</td>
+                        </tr>
+                            <td>Profit/(loss) after tax</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['profitAfterTax']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['profitAfterTax']</td>
+                        </tr>
+                            <td>Net dividend</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['netDividend']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['netDividend']</td>
+                        </tr>
+                            <td>Minority Interest</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][0]['minorityInterest']</td>
+                            <td>['Body']['getInfoFin2Response']['response']['getInfoFin2Return']['rocProfitLossListInfo']['rocProfitLossInfos'][1]['minorityInterest']</td>
+                        </tr>
+              
+                    </tbody>
+                </table>
+            </div>
+        
+
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

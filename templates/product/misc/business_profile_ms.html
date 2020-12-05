@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 4.01cm 2.48cm 3.34cm 2.48cm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template p#secondary {
+                font-size: 18px;
+            }
+            .default-template p#disclaimer {
+                font-size: 16px;
+            }
+            .default-template p#primary {
+                word-spacing: 7pt;
+                font-size: 22px;
+                text-align: justify;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+            .pg-break {
+                page-break-before: always; 
+                margin-top: 15rem;
+            }
+            .pg-start {
+                margin-top: 15rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+        <div class="default-template container pg-start">
+            <p id="disclaimer">
+                SUNGGUHPUN SEGALA USAHA TELAH DIAMBIL UNTUK MEMASTIKAN 
+                MAKLUMAT YANG DIBERI ADALAH BETUL DAN KEMASKINI PENDAFTAR 
+                PERNIAGAAN TIDAK BOLEH DIPERTANGGUNGKAN BAGI SEBARANG 
+                KERUGIAN KERANA MAKLUMAT YANG TERSILAP ATAU TERTINGGAL.
+            </p>
+            <h3 class="font-weight-bold text-center">*** MAKLUMAT PERNIAGAAN ***</h3>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p id="secondary">NAMA</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.bizInfo.registrationName}}</p>
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <p id="secondary">NO. PENDAFTARAN</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.bizInfo.registrationNo}}</p>
+                            </td>                            
+                        </tr> 
+                        <tr>       
+                            <td>
+                                <p id="secondary">ALAMAT UTAMA PERNIAGAAN</p>
+                            </td>
+                            <td>
+                                {% if data.bizInfo.address_1 %}
+                                <p id="secondary" class="mb-0">: {{data.bizInfo.address_1}} </p>
+                                {% else %}
+                                <p id="secondary">: NIL</p>
+                                {% endif %}
+                                {% if data.bizInfo.address_2 %}
+                                <p id="secondary" class="my-0">: {{data.bizInfo.address_2}} </p>
+                                {% endif %}
+                                {% if data.bizInfo.address_3 %}
+                                <p id="secondary" class="my-0">: {{data.bizInfo.address_3}} </p>
+                                {% endif %}
+                                {% if data.bizInfo.postcode %}
+                                <p id="secondary" class="my-0">: {{data.bizInfo.postcode}}, {{data.bizInfo.town}}  </p>
+                                {% endif %}
+                                {% if data.bizInfo.state %}
+                                <p id="secondary" class="my-0">: {{data.bizInfo.state}} </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>         
+                        <tr>       
+                            <td>
+                                <p id="secondary">BENTUK PERNIAGAAN</p>
+                            </td>
+                            <td>
+                                {% if data.bizInfo.bizOwnership %}
+                                <p id="secondary" class="my-0">: {{data.bizInfo.bizOwnership}} </p>
+                                {% else %}
+                                <p id="secondary">: </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>         
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH MULA BERNIAGA</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.bizInfo.bizStartDate}}</p>
+                            </td>                            
+                        </tr>       
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH PENDAFTARAN</p></td>
+                            <td>
+                                <p id="secondary">: {{data.bizInfo.regDate}}</p>
+                            </td>                            
+                        </tr>     
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH LUPUT PENDAFTARAN</p></td>
+                            <td>
+                                <p id="secondary">: {{data.bizInfo.endBusinessDate}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH PERUBAHAN TERAKHIR</p></td>
+                            <td>
+                                <p id="secondary">: {{data.bizInfo.ammendmentDate}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">STATUS</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{data.bizInfo.status}}</p>
+                            </td>
+                                
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="font-weight-bold text-center mt-5">*** JENIS PERNIAGAAN ****</h3>
+            <p id="secondary">{{data.bizType.description}}</p>
+
+            <h3 class="font-weight-bold text-center mt-5">*** MAKLUMAT CAWANGAN ****</h3>
+            <p id="secondary" class="text-center">*** TIADA CAWANGAN ***</p>
+            
+            {% for current in data.ownerCurrentInfo %}
+            <h3 class="font-weight-bold text-center pg-break">*** MAKLUMAT PEMILIK PERNIAGAAN TERKIN ****</h3>
+            <p id="secondary">NAMA: {{data.bizInfo.registrationName}}</p>
+            <p id="secondary">NO. PENDAFTARAN: {{data.bizInfo.compNoNew}} {{data.bizInfo.registrationNo}}</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p id="secondary">NAMA</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{current.name}}</p>
+                            </td>                            
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">ALAMAT KEDIAMAN</p>
+                            </td>
+                            <td>
+                                {% if current.address_1 %}
+                                <p id="secondary" class="mb-0">: {{current.address_1}} </p>
+                                {% else %}
+                                <p id="secondary">: NIL</p>
+                                {% endif %}
+                                {% if current.address_2 %}
+                                <p id="secondary" class="my-0">: {{current.address_2}} </p>
+                                {% endif %}
+                                {% if current.address_3 %}
+                                <p id="secondary" class="my-0">: {{current.address_3}} </p>
+                                {% endif %}
+                                {% if current.postcode %}
+                                <p id="secondary" class="my-0">: {{current.postcode}}, {{current.town}}  </p>
+                                {% endif %}
+                                {% if current.state %}
+                                <p id="secondary" class="my-0">: {{current.state}} </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>         
+                        <tr>       
+                            <td>
+                                <p id="secondary">NO K/P (LAMA)</p>
+                            </td>
+                            <td>
+                                {% if current.icNoOld %}
+                                <p id="secondary" class="my-0">: {{current.icNoOld}} </p>
+                                {% else %}
+                                <p id="secondary">: </p>
+                                {% endif %}
+                            </td>                            
+                        </tr> 
+                        <tr>       
+                            <td>
+                                <p id="secondary">NO K/P (BARU)</p>
+                            </td>
+                            <td>
+                                {% if current.icNoNew %}
+                                <p id="secondary" class="my-0">: {{current.icNoNew}} </p>
+                                {% else %}
+                                <p id="secondary">: </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>        
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH LAHIR</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{current.birthDate}}</p>
+                            </td>                            
+                        </tr>       
+                        <tr>       
+                            <td>
+                                <p id="secondary">BANGSA</p></td>
+                            <td>
+                                <p id="secondary">: {{current.race}}</p>
+                            </td>                            
+                        </tr>     
+                        <tr>       
+                            <td>
+                                <p id="secondary">JANTINA</p></td>
+                            <td>
+                                <p id="secondary">: {{current.gender}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">KEWARGANEGARAAN</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{current.nationality}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH MASUK</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{current.entryDate}}</p>
+                            </td>
+                                
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+
+            {% for previous in data.ownerPreviousInfo %}
+            <h3 class="font-weight-bold text-center pg-break">*** PREVIOUS DIRECTORS/OFFICERS ****</h3>
+            <p id="secondary">NAME: {{data.bizInfo.registrationName}}</p>
+            <p id="secondary">NO. PENDAFTARAN: {{data.bizInfo.compNoNew}} {{data.bizInfo.registrationNo}}</p>
+
+            <div class="table-responsive">
+                <table class="table text-left borderless">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p id="secondary">NAMA</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.name}}</p>
+                            </td>                            
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">ALAMAT KEDIAMAN</p>
+                            </td>
+                            <td>
+                                {% if previous.address_1 %}
+                                <p id="secondary" class="mb-0">: {{previous.address_1}} </p>
+                                {% else %}
+                                <p id="secondary">: NIL</p>
+                                {% endif %}
+                                {% if previous.address_2 %}
+                                <p id="secondary" class="my-0">: {{previous.address_2}} </p>
+                                {% endif %}
+                                {% if previous.address_3 %}
+                                <p id="secondary" class="my-0">: {{previous.address_3}} </p>
+                                {% endif %}
+                                {% if previous.postcode %}
+                                <p id="secondary" class="my-0">: {{previous.postcode}}, {{previous.town}}  </p>
+                                {% endif %}
+                                {% if previous.state %}
+                                <p id="secondary" class="my-0">: {{previous.state}} </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>         
+                        <tr>       
+                            <td>
+                                <p id="secondary">NO K/P (LAMA)</p>
+                            </td>
+                            <td>
+                                {% if previous.icNoOld %}
+                                <p id="secondary" class="my-0">: {{previous.icNoOld}} </p>
+                                {% else %}
+                                <p id="secondary">: </p>
+                                {% endif %}
+                            </td>                            
+                        </tr> 
+                        <tr>       
+                            <td>
+                                <p id="secondary">NO K/P (BARU)</p>
+                            </td>
+                            <td>
+                                {% if previous.icNoNew %}
+                                <p id="secondary" class="my-0">: {{previous.icNoNew}} </p>
+                                {% else %}
+                                <p id="secondary">: </p>
+                                {% endif %}
+                            </td>                            
+                        </tr>        
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH LAHIR</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.birthDate}}</p>
+                            </td>                            
+                        </tr>       
+                        <tr>       
+                            <td>
+                                <p id="secondary">BANGSA</p></td>
+                            <td>
+                                <p id="secondary">: {{previous.race}}</p>
+                            </td>                            
+                        </tr>     
+                        <tr>       
+                            <td>
+                                <p id="secondary">JANTINA</p></td>
+                            <td>
+                                <p id="secondary">: {{previous.gender}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">KEWARGANEGARAAN</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.nationality}}</p>
+                            </td>                            
+                        </tr>   
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH MASUK</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.entryDate}}</p>
+                            </td>
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">TARIKH KELUAR</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.withdrawDate}}</p>
+                            </td>
+
+                        </tr>
+                        <tr>       
+                            <td>
+                                <p id="secondary">SEBAB KELUAR</p>
+                            </td>
+                            <td>
+                                <p id="secondary">: {{previous.ammendmentType}}</p>
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            @charset "UTF-8";
+            @page {
+                /* padding: 2cm; */
+                /* size: A4; Change from the default size of A4 */
+                /* padding: 2.0cm; Set margin on each page */
+                size: A4 portait;
+                margin: 27mm 10mm 27mm 10mm;
+                @top-right{
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            header#header {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                height: 14.5rem;
+                width: 100%;
+            }
+            img.logo {
+                height: 14rem !important;
+            }
+            html {
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            .default-template {
+                color: #333;
+                font-family: "Courier New", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size: 11px;
+            }
+            table tr.top table td.title {
+                color: #333;
+            }
+            table tr.heading td {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="text-center">
+                <img class="mb-5 logo" src="https://pipeline-project.sgp1.digitaloceanspaces.com/ssm/resources/SSM-Logo.png">
+            </div>
+        </header>
+        
+
+        <div class="default-template container" style="margin-top: 15rem;">
+            <p>Although all efforts has been carried out to ensure that the information provided is 
+                accurate and up to date, the Registrat of Companies will not be liable for any losses 
+                arising from any inaccurate or omitted information.</p>
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">** PARTICULARS OF SHARE CAPITAL **</h3>
+
+                <div class="table-responsive">
+                    <table class="table text-left borderless">
+
+                        <tr></tr>
+                            <td>CORPORATE INFORMATION</td>
+        
+                        <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyName']</td>                            
+                            </tr>
+                            <tr>
+                                <td>Last Old Name:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyOldName']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Date Of Change:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['dateOfChange']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Registration No.:</td>
+                                <td>XXXNewCoFormatXXX  ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyNo']</td>                            
+                            </tr>         
+                            <tr>       
+                                <td>Incorporation Date:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['incorpDate']</td>                            
+                            </tr>       
+                            <tr>       
+                                <td>Type:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyType']</td>                            
+                            </tr>     
+                            <tr>       
+                                <td>Status:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyStatus']</td>                            
+                            </tr>  
+                            <tr>       
+                                <td>Registered Address:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocRegAddressInfo']['address1']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocRegAddressInfo']['address2']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocRegAddressInfo']['address3']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocRegAddressInfo']['town']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocRegAddressInfo']['state']</td>                            
+                            </tr> 
+                            <tr>       
+                                <td>Postcode:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocRegAddressInfo']['postcode']</td>                            
+                            </tr> 
+                                <td>Origin:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyCountry']</td>                            
+                            </tr> 
+                                <td>Business Address:</td>
+                                <td>>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocBusinessAddressInfo']['address1']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocBusinessAddressInfo']['address2']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocBusinessAddressInfo']['address3']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocBusinessAddressInfo']['town']
+                                    ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocBusinessAddressInfo']['state']</td>
+
+                             <tr>       
+                                 <td>Postcode:</td>
+                                 <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocBusinessAddressInfo']['postcode']</td>
+                                                              
+                            </tr> 
+                            <tr>       
+                                <td>Nature Of Business:</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['businessDescription']</td>                            
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            
+
+
+
+        <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">
+                               
+            </h3>
+                <div class="table-responsive">
+                <p>Name: ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyName']</p>
+                <p>Registration No.: XXXNewCoFormatXXX  ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyNo']</p>
+                
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                     
+                        <tr>
+                            <td>SUMMARY OF SHARE CAPITAL</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                            <td>TOTAL ISSUED (RM)
+                            ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['totalIssued']</td>
+                        <tr>
+                            <td>CLASS OF SHARE</td>
+                            <td>CASH</td>
+                            <td>OTHERWISE THAN CASH</td>
+                            <td>ISSUED SHARE</td>
+                        </tr>
+                        <tr>
+                            <td>ORDINARY</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['ordinaryCash']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['ordinaryOtherwise']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['ordinaryIssued']</td>
+                        </tr>
+                            <td>PREFERENCE</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['preferenceCash']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['preferenceOtherwise']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['preferenceIssued']</td>
+                        <tr>
+                            <td>OTHERS</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['othersCash']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['othersOtherwise']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['othersIssued']</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['othersCash']+
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['preferenceCash']+
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['othersCash']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['ordinaryOtherwise']+
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['preferenceOtherwise']+
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['othersOtherwise']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['ordinaryIssued']+
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['preferenceIssued']+
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['shareCapitalSummary']['othersIssued']</td>
+                        </tr>
+
+                
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="font-weight-bold text-center" style="page-break-before: always; margin-top: 15rem;">
+                               
+            </h3>
+                <div class="table-responsive">
+                    <p>Name: ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyName']</p>
+                    <p>Registration No.: XXXNewCoFormatXXX  ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['companyNo']</p>
+                
+                <table class="table text-left borderless">
+    
+                    <tbody>
+                     
+                        <tr>
+                            <td>SHARE DETAILS</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                        </p>This information of allotment of shares extracted from the company's document is registered as of 
+                        ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['rocCompanyInfo']['lastUpdateDate'] based on 
+                        the last ten (10) Return Of Allotment of shares lodged with SSM.
+                        </p>
+
+                        <tr>
+                            <td> (1) Date of Allotment:</td> 
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['dtAllot']</td>
+                        </tr>
+                        <tr>
+                            <td>(A) ALLOTMENT OF SHARES</td>
+                        </tr>
+            
+                        <tr>
+                            <td>CLASS OF SHARE</td>
+                            <td>CASH</td>
+                            <td>OTHERWISE THAN CASH</td>
+                            <td>ISSUED SHARE
+                            <td>TOTAL ISSUED SHARE (RM)</td>
+                        </tr>
+                        <tr>
+                            <td>ORDINARY</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']  
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']    
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']</td>
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['totalIssuedShare'] </td>   
+                        </tr>
+                        <tr>
+                            <td>PREFERENCE</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']  
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']    
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']</td>
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['totalIssuedShare'] </td>   
+                        </tr>
+                        <tr>
+                            <td>OTHERS</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']  
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']    
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['issuedShare']</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']</td>
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['totalIssuedShare'] </td>
+                        </tr> 
+                        <tr>
+                            <td>TOTAL</td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['totalIssuedShare'] </td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['totalIssuedShare'] </td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['totalIssuedShare'] </td>
+                            <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['shareDtl']
+                                ['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['totalIssuedShare'] </td>
+
+                            <tr>
+                                <td>(B) PARTICULAR OF ALLOTTEES</td>
+                            </tr>
+                
+                            <tr>
+                                <td>NO</td>
+                                <td>NAME/COMPANY
+                                    NAME/ADDRESS</td>
+                                <td>ID/PASSPORT/
+                                    COMPANY NUMBER</td>
+                                <td>NO OF SHARE</td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['particularAlloteesList']['particularAlloteesList']['alloteeName']</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['particularAlloteesList']['particularAlloteesList']['alloteeId']</td>
+                                <td>['Body']['getDetailsOfShareCapitalResponse']['response']['getDetailsOfShareCapitalReturn']['allotmentOfShare']['allotmentShareList'][0]['particularAlloteesList']['particularAlloteesList']['noOfShares']</td>
+                            </tr>
+        </div>
+    </body>
+
+    <footer>
+        <p></p>
+    </footer>
+</html>
+

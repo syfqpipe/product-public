@@ -1,0 +1,23 @@
+{
+    "security": {
+        "nameIdEncrypted": false,
+        "authnRequestsSigned": true,
+        "logoutRequestSigned": true,
+        "logoutResponseSigned": true,
+        "signMetadata": false,
+        "wantMessagesSigned": false,
+        "wantAssertionsSigned": true,
+        "wantNameId" : true,
+        "wantNameIdEncrypted": false,
+        "wantAssertionsEncrypted": true,
+        "wantAttributeStatement": false,
+        "failOnAuthnContextMismatch": false,
+        "metadataValidUntil": null,
+        "metadataCacheDuration": null,
+        "requestedAuthnContext": false,
+        "requestedAuthnContextComparison": "exact",
+        "wantXMLValidation": true,
+        "signatureAlgorithm": "http://www.w3.org/2000/09/xmldsig#rsa-sha1",
+        "digestAlgorithm": "http://www.w3.org/2001/04/xmlenc#sha256"
+    }
+}
